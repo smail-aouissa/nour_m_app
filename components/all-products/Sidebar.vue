@@ -10,8 +10,8 @@
                 </h3>
                 <b-collapse visible id="collapse-2">
                     <ul class="collections-list-row">
-                        <li v-for="(s, key) in sections" :key="key" :class="{'active': section.url ===  s.url }" >
-                            <a :href="`${type.url}/${s.url}`">{{ s.name }}</a>
+                        <li v-for="(section, key) in sections" :key="key" :class="{'active': parseInt(currentId) === section.id }" >
+                            <a :href="`${type.url}/${section.id}`">{{ section.label }}</a>
                         </li>
                     </ul>
                 </b-collapse>
@@ -26,15 +26,11 @@
 
                 <b-collapse visible id="collapse-4">
                     <ul class="size-list-row">
-                        <li :class="{'active': selectedSize === null }"
-                            @click="selectSize(null)">
-                            <a>Tous</a>
-                        </li>
                         <li v-for="(size, key) in sizes"
                             :key="key"
-                            :class="{'active': selectedSize ===size }"
+                            :class="{'active': includeSize(size)}"
                             @click="selectSize(size)">
-                            <a>{{size}}</a>
+                            <a>{{size.label}}</a>
                         </li>
                     </ul>
                 </b-collapse>
@@ -49,13 +45,11 @@
 
                 <b-collapse visible id="collapse-5">
                     <ul class="price-list-row">
-                        <li :class="{'active': isThisPrice(0, 10000)}" @click="selectPrice(0,10000)"><a>0 DZD - 10000 DZD</a></li>
-                        <li :class="{'active': isThisPrice(0, 100)}" @click="selectPrice(0,100)"><a>0 DZD - 100 DZD</a></li>
-                        <li :class="{'active': isThisPrice(100, 500)}" @click="selectPrice(100,500)"><a>100 DZD - 500 DZD</a></li>
-                        <li :class="{'active': isThisPrice(500, 1000)}" @click="selectPrice(500,1000)"><a>500 DZD - 1000 DZD</a></li>
-                        <li :class="{'active': isThisPrice(1000, 2000)}" @click="selectPrice(1000,2000)"><a>1000 DZD - 2000 DZD</a></li>
-                        <li :class="{'active': isThisPrice(2000, 5000)}" @click="selectPrice(2000,5000)"><a>2000 DZD - 5000 DZD</a></li>
-                        <li :class="{'active': isThisPrice(5000, 10000)}" @click="selectPrice(5000,10000)"><a>5000 DZD - 10000 DZD</a></li>
+                        <li v-for="(price, key) in prices" :key="key"
+                            :class="{'active': includePrice(price)}"
+                            @click="selectPrice(price)">
+                            <a>{{price.min}} DZD - {{price.max}} DZD</a>
+                        </li>
                     </ul>
                 </b-collapse>
             </div>
@@ -71,10 +65,10 @@
                     <div class="d-flex">
                         <div v-for="(color, key) in colors"
                              :key="key"
-                             :class="{'active-color': selectedColor && selectedColor.id === color.id}"
+                             :class="{'active-color': includeColor(color)}"
                              @click="selectColor(color)"
                              class="sun-quote-pages"
-                             :style="`background-color: ${color.color}`">
+                             :style="`background-color: ${color.code}`">
                         </div>
                     </div>
                 </b-collapse>
@@ -140,16 +134,21 @@
                 type: Array,
                 default: () => []
             },
-            section: Object,
         },
         data(){
             return {
-                selectedPrice: {
-                    max: 10000,
-                    min: 0,
-                },
-                selectedColor: null,
-                selectedSize: null,
+                currentId: this.$route.params.id,
+                prices:[
+                    {id : 0, min : 0 , max: 100 },
+                    {id : 1, min : 100 , max: 500 },
+                    {id : 2, min : 500 , max: 1000 },
+                    {id : 3, min : 1000 , max: 2000 },
+                    {id : 4, min : 2000 , max: 5000 },
+                    {id : 5, min : 5000 , max: 10000 },
+                ],
+                selectedPrice: [],
+                selectedColor: [],
+                selectedSize: [],
             }
         },
         watch:{
@@ -158,29 +157,56 @@
             }
         },
         methods:{
-            isThisPrice(min, max){
-                if(this.selectedPrice.min === min && this.selectedPrice.max === max)
+            // Price
+            selectPrice(price){
+                if(this.includePrice(price)){
+                    let index = this.selectedPrice.indexOf(price);
+                    this.selectedPrice.splice(index,1)
+                } else
+                    this.selectedPrice.push(price);
+                this.changedFilter();
+            } ,
+            includePrice(price){
+                if(this.selectedPrice.indexOf(price) > -1)
                     return true;
                 return false;
             },
-            selectPrice(min, max){
-                this.selectedPrice.min = min;
-                this.selectedPrice.max = max;
-                this.changedFilter();
-            }  ,
+
+            // Color
             selectColor(color){
-                this.selectedColor = color;
+                if(this.includeColor(color)){
+                    let index = this.selectedColor.indexOf(color);
+                    this.selectedColor.splice(index,1)
+                } else
+                    this.selectedColor.push(color);
                 this.changedFilter();
             },
+            includeColor(color){
+                if(this.selectedColor.indexOf(color) > -1)
+                    return true;
+                return false;
+            },
+
+            // Size
             selectSize(size){
-                this.selectedSize = size;
+                if(this.includeSize(size)){
+                    let index = this.selectedSize.indexOf(size);
+                    this.selectedSize.splice(index,1)
+                } else
+                    this.selectedSize.push(size);
                 this.changedFilter();
             },
+            includeSize(size){
+                if(this.selectedSize.indexOf(size) > -1)
+                    return true;
+                return false;
+            },
+
             changedFilter(){
                 this.$emit('changed-filter', {
-                    price: this.selectedPrice,
-                    color: this.selectedColor,
-                    size: this.selectedSize,
+                    prices: this.selectedPrice,
+                    colors: this.selectedColor,
+                    sizes: this.selectedSize,
                 })
             }
 

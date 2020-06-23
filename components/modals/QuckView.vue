@@ -55,13 +55,13 @@
                                     </div>
                                     <div v-else style="height: 60px"></div>
 
-                                    <div v-if="item.attribute" class="product-size-wrapper">
-                                        <h4>{{item.attribute.label }}:</h4>
+                                    <div v-if="item.sizes.length" class="product-size-wrapper">
+                                        <h4>Taille:</h4>
 
                                         <ul>
-                                            <li v-for="(variation, key) in item.attribute.variations" @click="selectAttribute(item.attribute, variation)" :key="key"
-                                                :class="{'active': selectedAttribute && selectedAttribute.value === variation.label }">
-                                                <a>{{variation.label}}</a>
+                                            <li v-for="(size, key) in item.sizes" @click="selectSize(size)" :key="key"
+                                                :class="{'active': selectedSize && selectedSize.id === size.id }">
+                                                <a>{{size.label}}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -104,16 +104,14 @@ export default {
             quantity: 1,
             stock: 1,
             selectedColor: null,
-            selectedAttribute: null
+            selectedSize: null
         }
-    },
-    created() {
     },
     methods: {
         closeQuickView(){
             this.quantity= 1;
             this.selectedColor= null;
-            this.selectedAttribute= null;
+            this.selectedSize= null;
             mutations.toggleQuickView(null);
         },
         addToCart(item){
@@ -124,7 +122,7 @@ export default {
                 image: this.getImage(item.photos),
                 quantity: this.quantity,
                 color: this.selectedColor,
-                attribute: this.selectedAttribute
+                size: this.selectedSize
             }]
 
             if(this.cart.length > 0){
@@ -175,12 +173,9 @@ export default {
         getImage(photos){
             return Array.isArray(photos) && photos.hasOwnProperty(0) ? photos[0].full : null;
         },
-        selectAttribute(attr, variation){
-            this.selectedAttribute = {
-                label : attr.label,
-                value : variation.label
-            };
-            if(variation.quantity) this.stock = variation.quantity;
+        selectSize(size){
+            this.selectedSize = size;
+            if(size.quantity) this.stock = size.quantity;
         },
         selectColor(color){
             this.selectedColor = color;

@@ -107,7 +107,7 @@ export default {
                 image: this.getImage(item.photos),
                 quantity: 1,
                 color: null,
-                attribute: null,
+                size: null,
             }]
 
             if(this.cart.length > 0){

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/components/all-products/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/all-products/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CartItems.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartItems.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/landing-one/ProductCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/ProductCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/SidebarPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/SidebarPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/_id.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dVl2ekzmnEbl4VIKykf9aB58wR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/plugins" />
+      <recent name="$PROJECT_DIR$/pages/category" />
+      <recent name="$PROJECT_DIR$/components/all-products" />
+      <recent name="$PROJECT_DIR$/assets/img/main-banner-image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/collection" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="" />
+      <created>1592517935771</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592517935771</updated>
+      <workItem from="1592517938580" duration="42491000" />
+      <workItem from="1592697500388" duration="36651000" />
+      <workItem from="1592855252021" duration="270000" />
+      <workItem from="1592855711603" duration="502000" />
+      <workItem from="1592864078808" duration="12000" />
+      <workItem from="1592864136553" duration="8369000" />
+    </task>
+    <task id="LOCAL-00001" summary="wip">
+      <created>1592707362320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592707362321</updated>
+    </task>
+    <task id="LOCAL-00002" summary="wip">
+      <created>1592711185355</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592711185355</updated>
+    </task>
+    <task id="LOCAL-00003" summary="wip">
+      <created>1592855127923</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592855127923</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="713" y="411" key="#File_Watchers" timestamp="1592593609309">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="713" y="411" key="#File_Watchers/0.0.1680.1050@0.0.1680.1050" timestamp="1592593609309" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592694940128">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592694940128" />
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1592855127695">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592855127695" />
+    <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="492" y="310" key="EditFileWatcherDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592593592692" />
+    <state x="713" y="429" key="Github.ShareDialog" timestamp="1592855743207">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="713" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592855743207" />
+    <state x="636" y="229" key="Github.UntrackedFilesDialog" timestamp="1592658068100">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="636" y="229" key="Github.UntrackedFilesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592658068100" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1592609362482">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1592609362482" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1592855169197">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592855169197" />
+    <state x="538" y="280" width="604" height="490" key="find.popup" timestamp="1592570535688">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="538" y="280" width="604" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592570535688" />
+  </component>
+</project>

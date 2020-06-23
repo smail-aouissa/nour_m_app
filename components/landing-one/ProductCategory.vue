@@ -13,7 +13,7 @@
                             <a href="#" class="btn btn-light">View More</a>
                         </div>
 
-                        <a :href="`/collections/${collections[0].id}`" class="link-btn"></a>
+                        <a :href="`/collection/${collections[0].id}`" class="link-btn"></a>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
                                     <h3>{{ collections[1].label }}</h3>
                                 </div>
 
-                                <a :href="`/collections/${collections[1].id}`" class="link-btn"></a>
+                                <a :href="`/collection/${collections[1].id}`" class="link-btn"></a>
                             </div>
                         </div>
 
@@ -39,7 +39,7 @@
                                     <h3>{{ collections[2].label }}</h3>
                                 </div>
 
-                                <a :href="`/collections/${collections[2].id}`" class="link-btn"></a>
+                                <a :href="`/collection/${collections[2].id}`" class="link-btn"></a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                     <h3>{{ collections[3].label }}</h3>
                                 </div>
 
-                                <a :href="`/collections/${collections[3].id}`" class="link-btn"></a>
+                                <a :href="`/collection/${collections[3].id}`" class="link-btn"></a>
                             </div>
                         </div>
                     </div>

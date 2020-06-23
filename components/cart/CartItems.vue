@@ -36,8 +36,8 @@
                                                         <span v-if="cart.color && cart.color.code " class="mx-2" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
                                                         <span v-else class="mx-2">Non défini</span>
                                                     </li>
-                                                    <li v-if="cart.attribute">{{cart.attribute.label}}:<strong>{{cart.attribute.value || 'Non défini'  }}</strong></li>
-                                                    <li>Catégorie: <strong>{{cart.category ? cart.category.label : 'Non défini' }}</strong></li>
+                                                    <li>Taille:<strong>{{ cart.size ? cart.size.label : 'Non défini'  }}</strong></li>
+                                                    <li>Catégorie: <strong>{{ cart.category ? cart.category.label : 'Non défini' }}</strong></li>
                                                 </ul>
                                             </td>
 

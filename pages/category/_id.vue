@@ -23,7 +23,6 @@
                                  :sections="sections"
                                  :colors="colors"
                                  :sizes="sizes"
-                                 :section="section"
                                  :top-products="topProduct"
                                  @changed-filter="loadProducts"/>
                         <AllProducts :products="products" />
@@ -47,19 +46,19 @@ export default {
     },
     data(){
         return {
+            id: this.$route.params.id,
             busy: false,
             type: {
                 name: 'Catégorie',
-                url : '/category'
+                url : '/category',
             },
             sections: [], // section => category or collection
             colors: [],
             sizes: [],
-            section: {
-                url: this.$route.params.id,
-            },
+            prices: [],
             products: [],
             filter: {},
+            page: 1,
             endOfScroll: false,
         }
     },
@@ -70,48 +69,59 @@ export default {
     },
     mounted() {
         this.loadCategory();
-        this.loadProducts();
+        this.loadProducts(this.filter);
     },
     methods: {
         loadCategory(){
-            this.sections = [
-                { name: 'Category A', url: 'category-a'},
-                { name: 'Category B', url: 'category-b'},
-                { name: 'Category C', url: 'category-c'},
-            ];
-            this.colors = [
-                { id: 1, color : '#2980b9'},
-                { id: 2, color : '#e74c3c'},
-                { id: 3, color : '#53a744'}
-            ];
-            this.sizes = ['S' , 'M', 'L', 'XL'];
-            this.section = {
-                id: 1,
-                url: this.$route.params.id,
-            }
-
+            this.$axios.$get('/categories').then(response => {
+                this.sections = response.sections;
+                this.colors = response.colors;
+                this.sizes = response.sizes;
+            }).catch(error => {
+                console.log(error)
+            })
         },
         loadProducts(data){
-            // axios filter
             this.filter = data;
-            this.products = [...this.$store.state.products.all];
+
+            if(this.id && this.id >= 0){
+                this.page = 1;
+                this.$axios.$post(`/category/${this.$route.params.id}?page=${this.page}`, this.filter ).then(response => {
+                    this.products = response.products.data;
+                    this.page = response.current_page + 1;
+
+                    if(!response.next_page_url){
+                        this.busy = true;
+                        this.endOfScroll = true;
+                    }
+                }).catch(error => {
+                    console.log(error)
+                })
+            }
         },
         loadMore(){
             // axios add
             this.busy = true;
+            console.log('test')
+            this.$axios.$post(`/category/${this.$route.params.id}?page=${this.page}`, this.filter ).then(response => {
+                let products = response.products.data;
+                for (var i = 0; i < products.length ; i++) {
+                    this.products.push(products[i]);
+                }
+                //this.products.concat(this.$store.state.products.all)
 
-            let p = [...this.$store.state.products.all]
-            for (var i = 0; i < p.length ; i++) {
-                this.products.push(p[i]);
-            }
-
-            //this.products.concat(this.$store.state.products.all)
-
-            setTimeout(() => {
-                // if the end stop it with busy true;
-                //this.busy = false;
-                //this.endOfScroll = true;
-            }, 500);
+                this.page = response.current_page;
+                if(!response.next_page_url){
+                    this.busy = true;
+                    this.endOfScroll = true;
+                }else{
+                    setTimeout(() => {
+                        this.busy = false;
+                    }, 500);
+                }
+            }).catch(error => {
+                console.log(error)
+            })
         }
     }
 }

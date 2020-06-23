@@ -31,7 +31,7 @@
                                             <span v-if="cart.color" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
                                             <span v-else>Non défini</span>
                                             <span class="mx-1">/</span>
-                                            <span v-if="cart.attribute">{{cart.attribute.value || 'Non défini'}}</span>
+                                            <span v-if="cart.size">{{cart.size.label || 'Non défini'}}</span>
                                             <span v-else>Non défini</span>
                                         </div>
                                         <div class="product-price">
