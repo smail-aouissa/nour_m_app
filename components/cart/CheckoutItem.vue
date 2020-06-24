@@ -257,7 +257,6 @@ export default {
                 this.$store.dispatch('cartEmpty')
                 this.$router.push("/");
             }).catch((error) => {
-                console.log(error)
                 this.$toast.error(`Erreur lors de la creation de la commande.`);
             })
         }

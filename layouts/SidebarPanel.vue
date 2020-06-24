@@ -18,9 +18,7 @@
 
                                 <div 
                                     class="product-cart"
-                                    v-for="cart in cart"
-                                    :key="cart.id"
-                                >
+                                    v-for="cart in cart">
                                     <div class="product-image">
                                         <img :src="cart.image" alt="Image de produit" />
                                     </div>

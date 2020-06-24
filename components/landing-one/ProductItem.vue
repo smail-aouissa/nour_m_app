@@ -30,15 +30,6 @@
                             <i class="far fa-heart"></i>
                         </a>
                     </li>
-                    <li>
-                        <a
-                            href="#"
-                            title="Ajouter pour comparer"
-                            v-b-tooltip.hover
-                        >
-                            <i class="fas fa-sync"></i>
-                        </a>
-                    </li>
                 </ul>
             </div>
 
@@ -113,9 +104,7 @@ export default {
             if(this.cart.length > 0){
                 let id = item.id 
                 this.getExistPId = id
-                let cartIndex = this.cart.findIndex(cart => {
-                    return cart.id == id
-                })
+                let cartIndex = this.cart.findIndex(cart => cart.id == id)
 
                 if(cartIndex == -1){
                     this.$store.dispatch('addToCart', product);
@@ -123,10 +112,7 @@ export default {
                         icon: 'fas fa-cart-plus'
                     });
                 } else {
-                    this.$store.dispatch('updateCart', {
-                        id, unit: 1, cart: this.cart,
-                    });
-                    this.$toast.info("Déjà ajouté au panier avec mise à jour");
+                    this.$toast.info("Produit déjà ajouté au panier!");
                 }
             } else {
                 this.$store.dispatch('addToCart', product)

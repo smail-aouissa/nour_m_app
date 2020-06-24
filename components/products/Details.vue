@@ -102,9 +102,11 @@ export default {
             }]
 
             if(this.cart && this.cart.length > 0){
-                let id = this.id 
+                let id = this.id
                 let cartIndex = this.cart.findIndex(cart => {
-                    return cart.id == id
+                    return cart.id == id &&
+                        (cart.color && cart.color.id == this.selectedColor.id) &&
+                        (cart.size && cart.size.id == this.selectedSize.id)
                 })
 
                 if(cartIndex == -1){
@@ -113,11 +115,8 @@ export default {
                         icon: 'fas fa-cart-plus'
                     });
                 } else {
-                    this.$store.dispatch('updateCart', {
-                        id, unit: 1, cart: this.cart, color: this.selectedColor, size: this.selectedSize
-                    });
                     this.getExistPId = true
-                    this.$toast.info("Déjà ajouté au panier avec mise à jour");
+                    this.$toast.info("Produit déjà ajouté au panier");
                 }
             } else {
                 this.$store.dispatch('addToCart', product)
