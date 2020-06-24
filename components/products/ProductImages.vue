@@ -4,8 +4,8 @@
             <div class="products-page-gallery">
                 <div class="product-page-gallery-main">
                     <vueper-slides
-                        :bullets = "false"
-                    >
+                        ref="slider"
+                        :bullets = "false">
                         <vueper-slide
                             v-for="(img, i) in images"
                             :key="i"
@@ -20,10 +20,27 @@
 <script>
 export default {
     props: {
-        images:{
+        photos:{
             type: Array,
             default: () => []
+        },
+        photo:{
+            type: String,
         }
     },
+    watch:{
+        photo(newVal){
+            if(this.photos.indexOf( p => p ))
+                console.log(newVal)
+        },
+    },
+    computed:{
+        images(){
+            if(this.photo)
+                return [this.photo].concat(this.photos.map( p => p.full ))
+            else
+                return this.photos.map( p => p.full )
+        }
+    }
 }
 </script>

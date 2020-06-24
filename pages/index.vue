@@ -7,11 +7,7 @@
     <!--TrendingProducts></TrendingProducts-->
     <BestSellers :products="bestSellersProducts"></BestSellers>
     <Testimonials></Testimonials>
-    <News></News>
     <Facility></Facility>
-    <!--Subscribe></Subscribe-->
-    <!--Partner></Partner-->
-    <!--InstagramPhotos></InstagramPhotos-->
   </div>
 </template>
 

@@ -17,7 +17,7 @@
                 <div class="section-title">
                     <h2><span class="dot"></span> Produits de la catégorie</h2>
                 </div>
-                <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                <div v-infinite-scroll="loadProducts" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                     <div class="row">
                         <Sidebar :type="type"
                                  :sections="sections"
@@ -34,20 +34,23 @@
             </div>
         </section>
         <!-- End Collections Area -->
+        <Loader v-show="loading"></Loader>
     </div>
 </template>
 
 <script>
 import Sidebar from '../../components/all-products/Sidebar';
 import AllProducts from '../../components/all-products/AllProducts';
+import Loader from "~/components/common/Loader";
 export default {
     components: {
-        Sidebar, AllProducts
+        Loader, Sidebar, AllProducts
     },
     data(){
         return {
             id: this.$route.params.id,
             busy: false,
+            loading: false,
             type: {
                 name: 'Catégorie',
                 url : '/category',
@@ -82,47 +85,39 @@ export default {
             })
         },
         loadProducts(data){
-            this.filter = data;
-
-            if(this.id && this.id >= 0){
+            if(data){
                 this.page = 1;
+                this.filter = data ;
+            }
+            if(this.id && this.id >= 0){
+                this.loading = true;
+                this.busy = true;
                 this.$axios.$post(`/category/${this.$route.params.id}?page=${this.page}`, this.filter ).then(response => {
-                    this.products = response.products.data;
+
+                    let products = response.products.data;
+                    if(data){
+                        this.products = products;
+                    }else{
+                        for (let i = 0; i < products.length ; i++) {
+                            this.products.push(products[i]);
+                        }
+                    }
+                    this.loading = false;
+
                     this.page = response.current_page + 1;
 
                     if(!response.next_page_url){
-                        this.busy = true;
                         this.endOfScroll = true;
+                    }else{
+                        setTimeout(() => {
+                            this.busy = false;
+                        }, 500);
                     }
                 }).catch(error => {
-                    console.log(error)
+                    this.loading = false;
                 })
             }
         },
-        loadMore(){
-            // axios add
-            this.busy = true;
-            console.log('test')
-            this.$axios.$post(`/category/${this.$route.params.id}?page=${this.page}`, this.filter ).then(response => {
-                let products = response.products.data;
-                for (var i = 0; i < products.length ; i++) {
-                    this.products.push(products[i]);
-                }
-                //this.products.concat(this.$store.state.products.all)
-
-                this.page = response.current_page;
-                if(!response.next_page_url){
-                    this.busy = true;
-                    this.endOfScroll = true;
-                }else{
-                    setTimeout(() => {
-                        this.busy = false;
-                    }, 500);
-                }
-            }).catch(error => {
-                console.log(error)
-            })
-        }
     }
 }
 </script>

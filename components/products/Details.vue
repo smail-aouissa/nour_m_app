@@ -1,10 +1,12 @@
 <template>
     <div class="col-lg-6 col-md-6">
         <div class="product-details-content">
-            <h3>{{product.name}}</h3>
+            <h3>{{product.label}}</h3>
 
             <div class="price">
-                <span class="new-price">${{product.price - (product.offerPrice || 0 )}}</span>
+                <span class="new-price">{{product.price - (product.offerPrice || 0 )}}
+                    <span style="font-size: 12px"> DZD</span>
+                </span>
             </div>
 
             <div class="product-review">
@@ -15,28 +17,28 @@
             </div>
 
             <ul class="product-info">
-                <li><span>Disponibilité:</span> <a>en stock ({{product.stock || 1 }} produits)</a></li>
-                <li><span>Type de produit:</span> <a>{{ product.category ? product.category.name : '-' }}</a></li>
+                <li><span>Disponibilité:</span> <a>en stock ({{stock || 1 }} produits)</a></li>
+                <li><span>Type de produit:</span> <a>{{ product.category ? product.category.label : '-' }}</a></li>
             </ul>
 
-            <div class="product-color-switch">
+            <div v-if="product.colors && product.colors.length > 0" class="product-color-switch">
                 <h4>Couleurs:</h4>
 
                 <ul>
-                    <li v-for="(color, key) in product.colors" :key="key" @click="selectedColor = color" :class="{'active' : selectedColor && selectedColor.id === color.id }">
+                    <li v-for="(color, key) in product.colors" :key="key" @click="selectColor(color)" :class="{'active' : selectedColor && selectedColor.id === color.id }">
                         <a title="Couleur">
-                            <span :style="`background-color: ${color.color}`"></span>
+                            <span :style="`background-color: ${color.code}`"></span>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <div class="product-size-wrapper">
+            <div v-if="product.sizes && product.sizes.length > 0" class="product-size-wrapper">
                 <h4>Taille:</h4>
 
                 <ul>
-                    <li v-for="(size, key) in product.sizes" @click="selectedSize = size" :key="key" :class="{'active': selectedSize && selectedSize === size }">
-                        <a>{{size}}</a>
+                    <li v-for="(size, key) in product.sizes" @click="selectSize(size)" :key="key" :class="{'active': selectedSize && selectedSize === size }">
+                        <a>{{size.label}}</a>
                     </li>
                 </ul>
             </div>
@@ -75,6 +77,7 @@ export default {
     data(){
         return {
             getExistPId: false,
+            stock: 1,
             quantity: 1,
             selectedColor: null,
             selectedSize: null
@@ -88,17 +91,12 @@ export default {
     },
     methods: {
         addToCart(){
-            if(!this.selectedColor || !this.selectedSize){
-                this.$toast.warning("Vous devez sélectionner la couleur et la taille");
-                return;
-            }
-
             const product = [{
                 id: this.product.id,
-                name: this.product.name,
+                label: this.product.label,
                 price: this.product.price,
-                image: this.product.images[0],
-                quantity: this.product.quantity,
+                image: this.getImage(this.product.photos),
+                quantity: this.quantity,
                 color: this.selectedColor,
                 size: this.selectedSize
             }]
@@ -146,6 +144,18 @@ export default {
                 this.quantity--;
             }
         },
+        getImage(photos){
+            return Array.isArray(photos) && photos.hasOwnProperty(0) ? photos[0].full : null;
+        },
+        selectSize(size){
+            this.selectedSize = size;
+            if(size.quantity) this.stock = size.quantity;
+        },
+        selectColor(color){
+            this.selectedColor = color;
+            if(color.quantity) this.stock = color.quantity;
+            if(color.photo) this.$emit('changed-photo',color.photo)
+        }
     }
 }
 </script>

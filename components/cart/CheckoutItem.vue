@@ -61,7 +61,24 @@
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-group">
                                             <label>Wilaya <span class="required">*</span></label>
-                                            <input type="text" id="city" v-model="personDetails.city" class="form-control">
+                                            <select @change="loadTowns" type="text" id="province" v-model="personDetails.province" class="form-control">
+                                                <option selected :value="null">Sélécionner une wilaya</option>
+                                                <option v-for="(p , key) in provinces" :key="key" :value="p">
+                                                    {{p.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div v-if="towns.length " class="col-lg-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>Ville <span class="required"></span></label>
+                                            <select type="text" id="town" v-model="personDetails.town" class="form-control">
+                                                <option selected :value="null">Sélécionner une ville</option>
+                                                <option v-for="(t , key) in towns" :key="key" :value="t">
+                                                    {{t.name}}
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +102,7 @@
 
                                             <tr v-for="(cart, i) in cart" :key="i">
                                                 <td class="product-name">
-                                                    <a href="#">{{cart.name}}</a>
+                                                    <a href="#">{{cart.label}}</a>
                                                 </td>
 
                                                 <td class="product-total">
@@ -114,7 +131,8 @@
                                                 </td>
 
                                                 <td class="shipping-price">
-                                                    <span>0.00 <span style="font-size: 11px"> DZD</span></span>
+                                                    <span v-if="personDetails.province">{{ (personDetails.province.price || 0.00).toFixed(2) }} <span style="font-size: 11px"> DZD</span></span>
+                                                    <span v-else>0.00 <span style="font-size: 11px"> DZD</span></span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -170,10 +188,13 @@ export default {
             personDetails: {
                 fullName: '',
                 address: '',
-                city: '',
                 email: '',
                 phone: '',
-            }
+                province: null,
+                town: null,
+            },
+            provinces: [],
+            towns: [],
         }
     },
     computed: {
@@ -183,13 +204,31 @@ export default {
         cartTotal(){
             return this.$store.getters.totalAmount
         }
-    }, 
+    },
+    mounted() {
+        this.loadProvinces()
+    },
     methods: {
+        loadProvinces(){
+            this.$axios.$get('/provinces').then(response => {
+                this.provinces = response.provinces;
+            }).catch(error => {
+                console.log(error)
+            })
+        },
+        loadTowns(){
+            if(this.personDetails.province)
+                this.$axios.$get('/province/'+this.personDetails.province.id).then(response => {
+                    this.towns = response.towns;
+                }).catch(error => {
+                    console.log(error)
+                })
+        },
         async add(){
             if(this.personDetails.fullName.length < 4){
                 this.$toast.error(`Veuillez vérifier votre nom (4 caractère au minimum).`);
                 return;
-            }else if( /^0(5|6|7)[0-9]{8}$/.test( this.personDetails.phone) ){
+            }else if( !/^0(5|6|7)[0-9]{8}$/.test( this.personDetails.phone) ){
                 this.$toast.error(`Numéro de téléphone invalide.`);
                 return ;
             } else if( this.personDetails.address.length < 4 ){
@@ -198,22 +237,29 @@ export default {
             } else if( this.personDetails.address.length < 3 ){
                 this.$toast.error(`Veuillez vérifier votre wilaya (3 caractère au minimum).`);
                 return ;
+            }else if( !this.personDetails.province ){
+                this.$toast.error(`Veuillez sélectionner votre wilaya`);
+                return ;
             }
 
             const cartData = {
                 details: this.personDetails,
                 items: this.cart
             }
-            await this.passOrder();
+            await this.passOrder(cartData);
         },
 
-        passOrder(){
-            // axioss
-            this.$toast.success(`Votre commande a été envoyée avec succés.`, {
-                icon: 'fas fa-cart-plus'
-            });
-            this.$store.dispatch('cartEmpty')
-            this.$router.push("/");
+        passOrder(data){
+            this.$axios.$post('/order', data).then(response => {
+                this.$toast.success(`Votre commande a été envoyée avec succés.`, {
+                    icon: 'fas fa-cart-plus'
+                });
+                this.$store.dispatch('cartEmpty')
+                this.$router.push("/");
+            }).catch((error) => {
+                console.log(error)
+                this.$toast.error(`Erreur lors de la creation de la commande.`);
+            })
         }
     }
 }

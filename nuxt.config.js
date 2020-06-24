@@ -8,7 +8,7 @@ export default {
     htmlAttrs: {
       lang: 'fr',
     },
-    title: 'Hidhab website',
+    title: 'Nour-M',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -57,7 +57,6 @@ export default {
     './assets/scss/styles/animate.min.css',
     './assets/scss/styles/fontawesome.min.css',
     './assets/scss/styles/style.scss',
-    './assets/scss/styles/admin.scss',
     './assets/scss/styles/responsive.scss',
   ],
   /** Axios module configuration

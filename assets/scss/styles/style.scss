@@ -2360,9 +2360,12 @@ Offer Area CSS
             z-index: -1;
         }
         h3 {
-            font-size: 17px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+            a {
+                font-size: 17px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                color: #6c757d;
+            }
         }
         ul {
             padding-left: 0;
@@ -6033,6 +6036,9 @@ Woocommerce Sidebar Area CSS
                 a {
                     img {
                         transition: $transition;
+                        width: 100px;
+                        height: 120px;
+                        object-fit: cover;
                     }
                 }
             }
@@ -6783,7 +6789,7 @@ Products Details Area CSS
         }
     }
     .product-color-switch {
-        margin-top: 8px;
+        margin: 15px 0px;
 
         h4 {
             font-size: 16px;
@@ -6813,6 +6819,15 @@ Products Details Area CSS
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
+
+                    span {
+                        position: absolute;
+                        z-index: 100;
+                        height: 17px;
+                        width: 17px;
+                        margin: 3px 3px;
+                        border-radius: 30px;
+                    }
 
                     &::before {
                         position: absolute;
@@ -6906,7 +6921,6 @@ Products Details Area CSS
     }
     .product-size-wrapper {
         margin: {
-            top: 8px;
             bottom: 25px;
         }
         h4 {

@@ -31,12 +31,11 @@
                                                     {{cart.label}}
                                                 </nuxt-link>
                                                 <ul>
-                                                    <li class="d-flex align-items-center">
+                                                    <li v-if="cart.color && cart.color.code " class="d-flex align-items-center">
                                                         Couleur:
-                                                        <span v-if="cart.color && cart.color.code " class="mx-2" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
-                                                        <span v-else class="mx-2">Non défini</span>
+                                                        <span class="mx-2" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
                                                     </li>
-                                                    <li>Taille:<strong>{{ cart.size ? cart.size.label : 'Non défini'  }}</strong></li>
+                                                    <li v-if="cart.size && cart.size.label">Taille:<strong>{{ cart.size.label  }}</strong></li>
                                                     <li>Catégorie: <strong>{{ cart.category ? cart.category.label : 'Non défini' }}</strong></li>
                                                 </ul>
                                             </td>
@@ -82,8 +81,8 @@
 
                                             <ul>
                                                 <li>Sous-total <span>{{parseFloat(cartTotal).toFixed(2)}} <span> DZD</span>  </span></li>
-                                                <li>Livraison <span>0.00 <span> DZD</span> </span></li>
-                                                <li>Total <span><b>${{parseFloat(cartTotal + 0).toFixed(2)}}</b> <span> DZD</span> </span></li>
+                                                <li>Livraison <span>Prochaine étape</span></li>
+                                                <li>Total <span><b>{{parseFloat(cartTotal + 0).toFixed(2)}}</b> <span> DZD</span> </span></li>
                                             </ul>
                                             <nuxt-link to="/checkout" class="btn btn-light">Passer à la caisse</nuxt-link>
                                         </div>

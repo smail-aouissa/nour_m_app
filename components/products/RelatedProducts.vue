@@ -11,7 +11,7 @@
                         v-for="product in relatedProducts"
                         :product="product"
                         :key="product.id"
-                        @clicked="toggle"
+                        @clicked="toggle(product)"
                         :className="`col-lg-3 col-md-6 col-6`"
                     ></ProductItem>
                 </div>
@@ -36,8 +36,8 @@ export default {
         }
     },
     methods: {
-        toggle() {
-            mutations.toggleQuickView()
+        toggle(product) {
+            mutations.toggleQuickView(product)
         }
     },
 }

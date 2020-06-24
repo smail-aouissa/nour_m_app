@@ -5,7 +5,7 @@
             <div class="container">
                 <ul>
                     <li><nuxt-link to="/">Accueil</nuxt-link></li>
-                    <li>{{product.name}}</li>
+                    <li>{{product.label}}</li>
                 </ul>
             </div>
         </div>
@@ -15,9 +15,9 @@
         <section class="products-details-area ptb-60">
             <div class="container">
                 <div class="row">
-                    <ProductImages v-if="product.images" :images="product.images" />
-                    <Details :product = "product"/>
-                    <DetailsInfo />
+                    <ProductImages v-if="product.photos" :photo="photo" :photos="product.photos" />
+                    <Details @changed-photo="changedPhoto" :product = "product"/>
+                    <DetailsInfo :description="product.description" />
                     <RelatedProducts :related-products="relatedProducts"/>
                 </div>
             </div>
@@ -39,9 +39,10 @@ export default {
     data(){
         return {
             product:{
-                id: this.$route.params.id || 1,
+                id: this.$route.params.id,
             },
-            relatedProducts: []
+            relatedProducts: [],
+            photo: null,
         }
     },
     mounted() {
@@ -49,21 +50,17 @@ export default {
     },
     methods: {
         loadProduct(){
-            this.product = {
-                id: 1,
-                url: 'product-xxx-1',
-                name: 'Linen crochet trim t-shirt',
-                price: 191.00,
-                offer: true,
-                offerPrice: 3,
-                images: ['https://www.bolster-vue.envytheme.com/_nuxt/img/d77a195.jpg', 'https://www.bolster-vue.envytheme.com//_nuxt/img/f523084.jpg'],
-                rating: 3,
-                stock: 12,
-                category: { name: 'T-shirt', url : 'category-n'},
-                colors: [ { id: 1, color : '#2980b9' , image: 'https://www.bolster-vue.envytheme.com/_nuxt/img/ae3d1e0.jpg' }, { id: 2, color : '#e74c3c' , image: 'https://www.bolster-vue.envytheme.com//_nuxt/img/af16d15.jpg' }] ,
-                sizes: ['S', 'L','XL'] ,
-            };
-            this.relatedProducts = this.$store.state.products.all.filter(product => product.id !== parseInt(this.id)).slice(0, 4)
+            if(!this.product.id) this.$router.push('/')
+
+            this.$axios.$get('/product/'+ this.product.id).then(response => {
+                this.product = response.product;
+                this.relatedProducts = response.relatedProducts;
+            }).catch(error => {
+                console.log(error)
+            })
+        },
+        changedPhoto(photo){
+            this.photo = photo;
         }
     }
 }

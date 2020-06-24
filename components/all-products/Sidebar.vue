@@ -36,7 +36,7 @@
                 </b-collapse>
             </div>
 
-            <div class="collapse-widget price-list-widget">
+            <!--div class="collapse-widget price-list-widget">
                 <h3 v-b-toggle.collapse-5 class="collapse-widget-title">
                     Prix
 
@@ -51,6 +51,31 @@
                             <a>{{price.min}} DZD - {{price.max}} DZD</a>
                         </li>
                     </ul>
+                </b-collapse>
+            </div-->
+
+            <div class="collapse-widget price-list-widget">
+                <h3 v-b-toggle.collapse-5 class="collapse-widget-title">
+                    Prix
+
+                    <i class="fas fa-angle-up"></i>
+                </h3>
+
+                <b-collapse visible id="collapse-5">
+                    <div class="slider">
+                        <range-slider
+                                :ballWidth="20"
+                                :barHeight="10"
+                                :ballColor="'#808080'"
+                                :track-round="'#000000'"
+                                :min="0" :max="10000"  :step="100"
+                                :start="selectedPrice.min" :end="selectedPrice.max"
+                                @slideEnd="selectPrice">
+                        </range-slider>
+                    </div>
+
+                    <div class="mt-2">Prix minimum: <strong>{{selectedPrice.min}}</strong></div>
+                    <div class="mt-2">Prix maximum: <strong>{{selectedPrice.max}}</strong></div>
                 </b-collapse>
             </div>
 
@@ -74,7 +99,7 @@
                 </b-collapse>
             </div>
 
-            <div class="collapse-widget aside-products-widget">
+            <div class="collapse-widget aside-products-widget mb-3">
                 <h3 class="aside-widget-title">
                     Produits populaires
                 </h3>
@@ -82,13 +107,13 @@
                 <div class="aside-single-products"
                      v-for="(product, key) in topProducts" :key="key">
                     <div class="products-image">
-                        <a :href="`/products-details/${product.url}`">
-                            <img :src="product.image" alt="image">
+                        <a :href="`/products-details/${product.id}`">
+                            <img :src="getImage(product.photos)" alt="image">
                         </a>
                     </div>
                     <div class="products-content">
-                        <span v-if="product.category"><a :href="`/category/${product.category.url}`">{{product.category.name}}</a></span>
-                        <h3><a :href="`/products-details/${product.url}`">{{product.name}}</a></h3>
+                        <span v-if="product.category"><a :href="`/category/${product.category.id}`">{{product.category.label}}</a></span>
+                        <h3><a :href="`/products-details/${product.id}`">{{product.label}}</a></h3>
 
                         <div class="product-price">
                             <span class="new-price">{{product.price - product.offerPrice}}
@@ -107,7 +132,14 @@
 </template>
 
 <script>
+
+
+    import RangeSlider from 'range-slider-vue';
+
     export default {
+        components: {
+            RangeSlider
+        },
         props: {
             sections : {
                 type: Array,
@@ -138,15 +170,10 @@
         data(){
             return {
                 currentId: this.$route.params.id,
-                prices:[
-                    {id : 0, min : 0 , max: 100 },
-                    {id : 1, min : 100 , max: 500 },
-                    {id : 2, min : 500 , max: 1000 },
-                    {id : 3, min : 1000 , max: 2000 },
-                    {id : 4, min : 2000 , max: 5000 },
-                    {id : 5, min : 5000 , max: 10000 },
-                ],
-                selectedPrice: [],
+                selectedPrice: {
+                    min: 0,
+                    max: 10000
+                },
                 selectedColor: [],
                 selectedSize: [],
             }
@@ -158,18 +185,10 @@
         },
         methods:{
             // Price
-            selectPrice(price){
-                if(this.includePrice(price)){
-                    let index = this.selectedPrice.indexOf(price);
-                    this.selectedPrice.splice(index,1)
-                } else
-                    this.selectedPrice.push(price);
+            selectPrice(e){
+                this.selectedPrice.max = e.end;
+                this.selectedPrice.min = e.start;
                 this.changedFilter();
-            } ,
-            includePrice(price){
-                if(this.selectedPrice.indexOf(price) > -1)
-                    return true;
-                return false;
             },
 
             // Color
@@ -204,12 +223,15 @@
 
             changedFilter(){
                 this.$emit('changed-filter', {
-                    prices: this.selectedPrice,
+                    price: this.selectedPrice,
                     colors: this.selectedColor,
                     sizes: this.selectedSize,
                 })
-            }
+            },
 
+            getImage(photos){
+                return Array.isArray(photos) && photos.hasOwnProperty(0) ? photos[0].thumb : null;
+            },
         },
     }
 </script>
@@ -235,5 +257,23 @@
     .active-color {
         border: 2px solid darkslategrey;
         transform: scale(1.2);
+    }
+
+    .slider{
+        margin: 0;
+        padding: 0;
+        width: 250px;
+    }
+
+    .slider {
+        width: 250px;
+    }
+
+    .round-bar{
+        padding: 0 10px !important;
+    }
+
+    .track-round{
+        background: black !important;
     }
 </style>

@@ -23,28 +23,19 @@
         </div>
 
         <div id="products-filter" class="products-collections-listing row">
-            <ProductItem
-                v-for="(product, index) in productsList"
-                :product="product"
-                :key="index"
-                @clicked="toggle(product)"
-                className="col-lg-6 col-md-6 products-col-item"
-            ></ProductItem>
-            
+            <ProductItem v-if="productsList && productsList.length > 0"
+                    v-for="(product, index) in productsList"
+                    :product="product"
+                    :key="index"
+                    @clicked="toggle(product)"
+                    className="col-lg-6 col-md-6 products-col-item">
+            </ProductItem>
+            <div v-else class="d-flex flex-column align-items-center mt-5"
+                 style="width: 100%">
+                <img src="../../assets/images/no-product.png" />
+                <span>Aucun produit trouvé!</span>
+            </div>
         </div>
-
-        <!--nav class="woocommerce-pagination">
-            <ul>
-                <li><a href="#" class="page-numbers current">1</a></li>
-                <li><span class="page-numbers">2</span></li>
-                <li><a href="#" class="page-numbers">3</a></li>
-                <li><a href="#" class="page-numbers">4</a></li>
-                <li><span class="page-numbers dots">…</span></li>
-                <li><a href="#" class="page-numbers">11</a></li>
-                <li><a href="#" class="page-numbers">12</a></li>
-                <li><a href="#" class="next page-numbers"><i class="fas fa-chevron-right"></i></a></li>
-            </ul>
-        </nav-->
 
         <QuckView />
     </div>

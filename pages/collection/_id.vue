@@ -17,13 +17,12 @@
                 <div class="section-title">
                     <h2><span class="dot"></span> Produits de la collection</h2>
                 </div>
-                <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                <div v-infinite-scroll="loadProducts" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                     <div class="row">
                         <Sidebar :type="type"
                                  :sections="sections"
                                  :colors="colors"
                                  :sizes="sizes"
-                                 :section="section"
                                  :top-products="topProduct"
                                  @changed-filter="loadProducts"/>
                         <AllProducts :products="products" />
@@ -35,31 +34,34 @@
             </div>
         </section>
         <!-- End Collections Area -->
+        <Loader v-show="loading"></Loader>
     </div>
 </template>
 
 <script>
 import Sidebar from '../../components/all-products/Sidebar';
 import AllProducts from '../../components/all-products/AllProducts';
+import Loader from "~/components/common/Loader";
 export default {
     components: {
-        Sidebar, AllProducts
+        Loader, Sidebar, AllProducts
     },
     data(){
         return {
+            id: this.$route.params.id,
             busy: false,
+            loading: false,
             type: {
                 name: 'Collection',
-                url : '/collection'
+                url : '/collection',
             },
             sections: [], // section => category or collection
             colors: [],
             sizes: [],
-            section: {
-                url: this.$route.params.id,
-            },
+            prices: [],
             products: [],
             filter: {},
+            page: 1,
             endOfScroll: false,
         }
     },
@@ -69,50 +71,53 @@ export default {
         }
     },
     mounted() {
-        this.loadCategory();
-        this.loadProducts();
+        this.loadCollection();
+        this.loadProducts(this.filter);
     },
     methods: {
-        loadCategory(){
-            this.sections = [
-                { name: 'Collection A', url: 'collection-a'},
-                { name: 'Collection B', url: 'collection-b'},
-                { name: 'Collection C', url: 'collection-c'},
-            ];
-            this.colors = [
-                { id: 1, color : '#2980b9'},
-                { id: 2, color : '#e74c3c'},
-                { id: 3, color : '#53a744'}
-            ];
-            this.sizes = ['S' , 'M', 'L', 'XL'];
-            this.section = {
-                id: 1,
-                url: this.$route.params.id,
-            }
-
+        loadCollection(){
+            this.$axios.$get('/collections').then(response => {
+                this.sections = response.sections;
+                this.colors = response.colors;
+                this.sizes = response.sizes;
+            }).catch(error => {
+                console.log(error)
+            })
         },
         loadProducts(data){
-            // axios filter
-            this.filter = data;
-            this.products = [...this.$store.state.products.all];
-        },
-        loadMore(){
-            // axios add
-            this.busy = true;
-
-            let p = [...this.$store.state.products.all]
-            for (var i = 0; i < p.length ; i++) {
-                this.products.push(p[i]);
+            if(data){
+                this.page = 1;
+                this.filter = data ;
             }
+            if(this.id && this.id >= 0){
+                this.loading = true;
+                this.busy = true;
+                this.$axios.$post(`/collection/${this.$route.params.id}?page=${this.page}`, this.filter ).then(response => {
 
-            //this.products.concat(this.$store.state.products.all)
+                    let products = response.products.data;
+                    if(data){
+                        this.products = products;
+                    }else{
+                        for (let i = 0; i < products.length ; i++) {
+                            this.products.push(products[i]);
+                        }
+                    }
+                    this.loading = false;
 
-            setTimeout(() => {
-                // if the end stop it with busy true;
-                //this.busy = false;
-                //this.endOfScroll = true;
-            }, 500);
-        }
+                    this.page = response.current_page + 1;
+
+                    if(!response.next_page_url){
+                        this.endOfScroll = true;
+                    }else{
+                        setTimeout(() => {
+                            this.busy = false;
+                        }, 500);
+                    }
+                }).catch(error => {
+                    this.loading = false;
+                })
+            }
+        },
     }
 }
 </script>

@@ -14,7 +14,9 @@
 
                         <div class="box-inner">
                             <div class="inner-content">
-                                <h3 class="text-truncate">{{category.label}}</h3>
+                                <h3 class="text-truncate">
+                                    <a :href="`/category/${category.id}`">{{category.label}}</a>
+                                </h3>
 
                                 <ul>
                                     <li v-for="(subcategory, key) in category.children" :key="key">

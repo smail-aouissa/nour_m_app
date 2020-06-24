@@ -17,9 +17,11 @@
     "cookie-universal-nuxt": "^2.1.4",
     "firebase": "^7.9.3",
     "nuxt": "^2.0.0",
+    "range-slider-vue": "^1.0.3",
     "vue-backtotop": "^1.6.1",
     "vue-carousel": "^0.18.0",
     "vue-infinite-scroll": "^2.0.2",
+    "vue-range-slider": "^0.6.0",
     "vue-toastification": "^0.8.0",
     "vueperslides": "^2.8.2"
   },

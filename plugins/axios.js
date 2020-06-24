@@ -1,4 +1,4 @@
-export default function ({store, $axios, app, redirect }) {
+export default function ({store, $axios, app, redirect, error }) {
 
     /*
     ** Required headers
@@ -11,12 +11,14 @@ export default function ({store, $axios, app, redirect }) {
     /*
     ** Error handling
     */
-    $axios.onError(error => {
-        //redirect('/')
+    $axios.onError(e => {
+        if(e.response.status === 404){
+            error({ statusCode: 404, message: 'Not found' })
+        }
     })
 
     $axios.onResponse(response => {
-
+        //
     })
 
 }

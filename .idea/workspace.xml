@@ -2,13 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/no-product.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/.nuxt/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/styles/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/OrderItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/OrderPerson.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/Sidebar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/all-products/AllProducts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/all-products/AllProducts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/all-products/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/all-products/Sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartItems.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartItems.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/landing-one/ProductCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/ProductCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/SidebarPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/SidebarPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CheckoutItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CheckoutItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/Loader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Loader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-three/Banner.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-three/Category.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-three/Offer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/Banner.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/BestSellers.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/Facility.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/News.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/Offer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/diction-two/TrendingProducts.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/landing-one/Offer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/Offer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/Details.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/DetailsInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/DetailsInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/ProductImages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/ProductImages.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/RelatedProducts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/RelatedProducts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/category/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/collection/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/collection/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/products-details/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/products-details/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/axios.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +60,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/plugins" />
-      <recent name="$PROJECT_DIR$/pages/category" />
-      <recent name="$PROJECT_DIR$/components/all-products" />
-      <recent name="$PROJECT_DIR$/assets/img/main-banner-image" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pages/collection" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/pages/collection" />
+      <recent name="$PROJECT_DIR$/components/common" />
+      <recent name="$PROJECT_DIR$/plugins" />
+      <recent name="$PROJECT_DIR$/pages/category" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -64,7 +91,7 @@
       <workItem from="1592855252021" duration="270000" />
       <workItem from="1592855711603" duration="502000" />
       <workItem from="1592864078808" duration="12000" />
-      <workItem from="1592864136553" duration="8369000" />
+      <workItem from="1592864136553" duration="32574000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1592707362320</created>
@@ -87,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592855127923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wip">
+      <created>1592882778608</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592882778608</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,10 +142,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592694940128" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1592855127695">
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1592882778345">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592855127695" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592882778345" />
     <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -128,13 +162,21 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1592609362482" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1592855169197">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1592882779710">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592855169197" />
-    <state x="538" y="280" width="604" height="490" key="find.popup" timestamp="1592570535688">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592882779710" />
+    <state x="538" y="280" width="604" height="490" key="find.popup" timestamp="1592932261192">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="538" y="280" width="604" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592570535688" />
+    <state x="538" y="280" width="604" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592932261192" />
+    <state x="505" y="248" key="run.anything.popup" timestamp="1592928652698">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592928652698" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592930595549">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592930595549" />
   </component>
 </project>

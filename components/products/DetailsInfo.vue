@@ -12,7 +12,7 @@
 
                 <div class="col-lg-12 col-md-12">
                     <div class="tab_content">
-                        <div class="tabs_item">
+                        <div class="tabs_item text-center">
                             <div class="products-details-tab-content" v-html="description"></div>
                         </div>
                     </div>
