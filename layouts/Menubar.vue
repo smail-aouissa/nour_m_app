@@ -48,6 +48,10 @@
                                 <li class="nav-item">
                                     <nuxt-link to="/about" class="nav-link">A propos</nuxt-link>
                                 </li>
+
+                                <li class="nav-item">
+                                    <nuxt-link to="/contact" class="nav-link">Contact</nuxt-link>
+                                </li>
                             </ul>
 
                             <div class="others-option">

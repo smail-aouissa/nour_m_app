@@ -84,7 +84,10 @@ export default {
     computed: {
         cart(){
             return this.$store.getters.cart
-        }
+        },
+        wishlist(){
+            return this.$store.getters.wishlist
+        },
     },
     methods: {
         quickView(e){
@@ -122,17 +125,16 @@ export default {
             }
         },
         addToWishlist(item){
-            const product = [{
-                id: item.id,
-                name: item.name,
-                price: item.price,
-                image: item.image,
-                quantity: 1,
-                color: null,
-                size: null,
-            }]
+            let index = this.wishlist.findIndex(w => w.id == item.id)
+            if(index == -1){
+                this.$store.dispatch('addToWishlist', item);
+                this.$toast("Produit ajouté au favoris", {
+                    icon: 'fas fa-cart-plus'
+                });
+            } else {
+                this.$toast.info("Produit déjà ajouté au favoris!");
+            }
 
-            // TODO: wishlist cookies
         },
         getImage(photos){
             return Array.isArray(photos) && photos.hasOwnProperty(0) ? photos[0].full : null;

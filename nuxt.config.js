@@ -8,7 +8,7 @@ export default {
     htmlAttrs: {
       lang: 'fr',
     },
-    title: 'Nour-M',
+    title: 'Nour-M Boutique',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

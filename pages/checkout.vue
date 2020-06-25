@@ -1,12 +1,22 @@
 <template>
-    <CheckoutItem />
+    <div>
+        <Checkout-one-item v-if="id"/>
+        <CheckoutItems v-else />
+    </div>
 </template>
 
 <script>
-import CheckoutItem from '../components/cart/CheckoutItem';
+import CheckoutItems from '../components/cart/CheckoutItems';
+import CheckoutOneItem from "~/components/cart/CheckoutOneItem";
 export default {
     components: {
-        CheckoutItem
+        CheckoutOneItem,
+        CheckoutItems
+    },
+    data(){
+        return {
+            id: this.$route.query.product
+        }
     }
 }
 </script>

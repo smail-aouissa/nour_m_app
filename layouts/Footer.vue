@@ -36,9 +36,9 @@
 
                         <ul class="footer-contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Location: Centre commercial « frique Bazar » Birkhadem, Alger</li>
-                            <li><i class="fas fa-phone"></i> Call Us: <a href="#">+213 (0) 553 31 09 76</a></li>
-                            <li><i class="far fa-envelope"></i> Email Us: <a href="mailto:contact@noor-m.com">contact@noor-m.com</a></li>
-                            <li><i class="fas fa-fax"></i> Heures d'ouverture: <a href="#">8am–5pm</a></li>
+                            <li><i class="fas fa-phone"></i> Appelez-nous: <a href="#">+213 (0) 553 31 09 76</a></li>
+                            <li><i class="far fa-envelope"></i> Envoyez-nous un email: <a href="mailto:contact@noor-m.com">contact@noor-m.com</a></li>
+                            <li><i class="fas fa-door-open"></i> Heures d'ouverture: <a href="#">8H – 17H</a></li>
                         </ul>
                     </div>
                 </div>

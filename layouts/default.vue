@@ -35,8 +35,10 @@ export default {
       this.$axios.$get('/').then(response => {
         this.topPanelItems = response.topPanelItems;
         this.categories = response.categories;
+        setTimeout(() => { this.loading = false; }, 500);
       }).catch(error => {
         console.log(error)
+        this.loading = false;
       })
     }
   },
@@ -48,7 +50,6 @@ export default {
   },
   mounted(){
     this.loadData();
-    setTimeout(() => { this.loading = false; }, 500);
     this.$store.dispatch('initStore')
   }
 }

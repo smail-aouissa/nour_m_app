@@ -2,7 +2,7 @@
     <!-- Start Top Panel Area -->
     <client-only>
         <transition name="fade">
-            <div class="top-panel">
+            <div v-if="items && items.length" class="top-panel">
                 <div class="container">
                     <div class="panel-content">
                         <div class="top-panel-slides">

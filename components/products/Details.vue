@@ -42,6 +42,7 @@
                     </li>
                 </ul>
             </div>
+            <div v-else style="height: 100px"></div>
 
             <div class="product-add-to-cart">
                 <div class="input-counter">
@@ -60,12 +61,12 @@
             </div>
 
             <div class="wishlist-compare-btn">
-                <a href="#" class="btn btn-light"><i class="far fa-heart"></i> Ajouter au favoris</a>
+                <a href="#" class="btn btn-light" @click="addToWishlist(product)"><i class="far fa-heart"></i> Ajouter au favoris</a>
             </div>
 
             <div class="buy-checkbox-btn">
                 <div class="item">
-                    <a href="#" class="btn btn-primary">Achetez-le maintenant!</a>
+                    <a href="#" @click="buyProduct" class="btn btn-primary">Achetez-le maintenant!</a>
                 </div>
             </div>
         </div>
@@ -87,7 +88,10 @@ export default {
     computed: {
         cart(){
             return this.$store.getters.cart
-        }
+        },
+        wishlist(){
+            return this.$store.getters.wishlist
+        },
     },
     methods: {
         addToCart(){
@@ -125,6 +129,18 @@ export default {
                 });
             }
         },
+        addToWishlist(item){
+            let index = this.wishlist.findIndex(w => w.id == item.id)
+            if(index == -1){
+                this.$store.dispatch('addToWishlist', item);
+                this.$toast("Produit ajouté au favoris", {
+                    icon: 'fas fa-cart-plus'
+                });
+            } else {
+                this.$toast.info("Produit déjà ajouté au favoris!");
+            }
+
+        },
         increaseQuantity(){
             if(this.quantity > this.product.stock){
                 this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.item.stock,{
@@ -154,6 +170,20 @@ export default {
             this.selectedColor = color;
             if(color.quantity) this.stock = color.quantity;
             if(color.photo) this.$emit('changed-photo',color.photo)
+        },
+        buyProduct(){
+            const product = [{
+                id: this.product.id,
+                label: this.product.label,
+                price: this.product.price,
+                image: this.getImage(this.product.photos),
+                quantity: this.quantity,
+                color: this.selectedColor,
+                size: this.selectedSize
+            }]
+            //this.$cookies.set('product-checkout',product);
+            this.$store.dispatch('setProduct', product)
+            this.$router.push('/checkout?product='+this.product.id)
         }
     }
 }

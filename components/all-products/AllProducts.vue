@@ -22,15 +22,19 @@
             </div>
         </div>
 
-        <div id="products-filter" class="products-collections-listing row">
-            <ProductItem v-if="productsList && productsList.length > 0"
+        <div v-if="productsList && productsList.length > 0"
+             id="products-filter" class="products-collections-listing row">
+            <ProductItem
                     v-for="(product, index) in productsList"
                     :product="product"
                     :key="index"
                     @clicked="toggle(product)"
                     className="col-lg-6 col-md-6 products-col-item">
             </ProductItem>
-            <div v-else class="d-flex flex-column align-items-center mt-5"
+        </div>
+
+        <div v-else class="products-collections-listing row">
+            <div class="d-flex flex-column align-items-center mt-5"
                  style="width: 100%">
                 <img src="../../assets/images/no-product.png" />
                 <span>Aucun produit trouvé!</span>

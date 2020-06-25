@@ -24,7 +24,7 @@
                                     </div>
 
                                     <div class="product-content">
-                                        <h3><a href="#">{{cart.label}}</a></h3>
+                                        <h3><a :href="`/products-details/${cart.id}`">{{cart.label}}</a></h3>
                                         <div class="d-flex align-items-center">
                                             <span v-if="cart.color" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
                                             <span v-else>Non défini</span>

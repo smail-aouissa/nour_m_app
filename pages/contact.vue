@@ -3,8 +3,8 @@
         <div class="page-title-area">
             <div class="container">
                 <ul>
-                    <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li>Contact Us</li>
+                    <li><nuxt-link to="/">Accueil</nuxt-link></li>
+                    <li>Contact</li>
                 </ul>
             </div>
         </div>
@@ -12,81 +12,73 @@
         <section class="contact-area ptb-60">
             <div class="container">
                 <div class="section-title">
-                    <h2><span class="dot"></span> Contact Us</h2>
+                    <h2><span class="dot"></span>Contactez-nous</h2>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <div class="contact-info">
-                            <h3>Here to Help</h3>
-                            <p>Have a question? You may find an answer in our FAQs. But you can also contact us.</p>
+                            <h3>Nous sommes ici pour aider</h3>
+                            <p>Vous avez une question? Vous pouvez nous appeler. Mais vous pouvez également nous contacter.</p>
 
                             <ul class="contact-list">
-                                <li><i class="fas fa-map-marker-alt"></i> Location: 2750 Quadra Street Victoria, Canada</li>
-                                <li><i class="fas fa-phone"></i> Call Us: <a href="#">(+123) 456-7898</a></li>
-                                <li><i class="far fa-envelope"></i> Email Us: <a href="#">support@comero.com</a></li>
-                                <li><i class="fas fa-fax"></i> Fax: <a href="#">+123456</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: Centre commercial « frique Bazar » Birkhadem, Alger</li>
+                                <li><i class="fas fa-phone"></i> Appelez-nous: <a href="#">+213 (0) 553 31 09 76</a></li>
+                                <li><i class="far fa-envelope"></i> Envoyez-nous un email: <a href="mailto:contact@noor-m.com">contact@noor-m.com</a></li>
+                                <li><i class="fas fa-door-open"></i> Heures d'ouverture: <a href="#">8am–5pm</a></li>
                             </ul>
 
-                            <h3>Opening Hours:</h3>
+                            <h3>Heures d'ouverture:</h3>
                             <ul class="opening-hours">
-                                <li><span>Monday:</span> 8AM - 6AM</li>
-                                <li><span>Tuesday:</span> 8AM - 6AM</li>
-                                <li><span>Wednesday:</span> 8AM - 6AM</li>
-                                <li><span>Thursday - Friday:</span> 8AM - 6AM</li>
-                                <li><span>Sunday:</span> Closed</li>
+                                <li><span>Dimanche:</span> 8H - 17H</li>
+                                <li><span>Lundi:</span> 8H - 17H</li>
+                                <li><span>Mardi:</span> 8H - 17H</li>
+                                <li><span>Mercredi:</span> 8H - 17H</li>
+                                <li><span>Jeudi:</span> 8H - 17H</li>
+                                <li><span>Vendredi:</span> Fermée</li>
+                                <li><span>Samedi:</span> 11H - 18H</li>
+
                             </ul>
 
-                            <h3>Follow Us:</h3>
+                            <h3>Suivez-moi:</h3>
                             <ul class="social">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://web.facebook.com/NOOR.M.COLLECTION"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/noor_m_officiel"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UChWu2gyOv_jObFMaocwOj6w"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-7 col-md-12">
                         <div class="contact-form">
-                            <h3>Drop Us A Line</h3>
-                            <p>We’re happy to answer any questions you have or provide you with an estimate. Just send us a message in the form below with any questions you may have.</p>
+                            <h3>Contactez-nous</h3>
+                            <p>Nous serons ravis de répondre à toutes vos questions ou de vous fournir un devis. Envoyez-nous simplement un message dans le formulaire ci-dessous avec toutes les questions que vous pourriez avoir.</p>
 
-                            <form id="contactForm">
+                            <form id="contactForm" @submit.prevent="sendMessage">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label>Name <span>(required)*</span></label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name">
+                                            <label>Nom complet <span>(obligatoire)*</span></label>
+                                            <input v-model="name" type="text" name="name" id="name" class="form-control" placeholder="Votre Nom">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label>Email <span>(required)*</span></label>
-                                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email Address">
+                                            <label>Email <span>(obligatoire)*</span></label>
+                                            <input v-model="email" type="email" name="email" id="email" class="form-control" placeholder="Votre Adresse Email">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label>Phone Number <span>(required)*</span></label>
-                                            <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="Enter your Phone Number">
+                                            <label>Votre Message <span>(obligatoire)*</span></label>
+                                            <textarea v-model="text" name="message" id="message" cols="30" rows="8" class="form-control" placeholder="Votre Message"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
-                                        <div class="form-group">
-                                            <label>Your Message <span>(required)*</span></label>
-                                            <textarea name="message" id="message" cols="30" rows="8" class="form-control" placeholder="Enter your Message"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
-                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                        <button type="submit" class="btn btn-primary">Envoyer Message</button>
                                     </div>
                                 </div>
                             </form>
@@ -97,3 +89,25 @@
         </section>
     </div>
 </template>
+
+<script>
+    export default {
+        data(){
+            return {
+                name: null,
+                email: null,
+                text: null,
+            }
+        },
+        methods:{
+            sendMessage(){
+                if(!this.name || !this.email || this.text ){
+                    this.$toast.error("Veuillez verifier vos données");
+                    return;
+                }
+
+                // TODO: send message to server
+            }
+        }
+    }
+</script>

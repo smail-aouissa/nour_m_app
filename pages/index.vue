@@ -4,9 +4,8 @@
     <Offer :categories="categories"></Offer>
     <LatestProducts :products="latestProducts"></LatestProducts>
     <ProductCategory :collections="collections"></ProductCategory>
-    <!--TrendingProducts></TrendingProducts-->
     <BestSellers :products="bestSellersProducts"></BestSellers>
-    <Testimonials></Testimonials>
+    <Testimonials :testimonials="testimonials"></Testimonials>
     <Facility></Facility>
   </div>
 </template>
@@ -27,8 +26,8 @@ import InstagramPhotos from '../components/common/InstagramPhotos';
 
 export default {
   components: {
-    Banner, Offer, LatestProducts, ProductCategory, TrendingProducts,
-    BestSellers, Facility, Testimonials, News, Subscribe, Partner, InstagramPhotos
+    Banner, Offer, LatestProducts, ProductCategory,
+    BestSellers, Facility, Testimonials, Subscribe,
   },
   data(){
     return {
@@ -36,7 +35,8 @@ export default {
       categories: [],
       latestProducts : [],
       bestSellersProducts: [],
-      collections: []
+      collections: [],
+      testimonials: [],
     }
   },
   mounted() {
@@ -50,6 +50,7 @@ export default {
         this.latestProducts = response.latestProducts;
         this.bestSellersProducts = response.bestSellersProducts;
         this.collections = response.collections;
+        this.testimonials = response.testimonials;
       }).catch(error => {
         console.log(error)
       })

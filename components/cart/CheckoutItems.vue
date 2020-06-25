@@ -4,8 +4,8 @@
         <div class="page-title-area">
             <div class="container">
                 <ul>
-                    <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li>Cart</li>
+                    <li><nuxt-link to="/">Accueil</nuxt-link></li>
+                    <li>Check-out</li>
                 </ul>
             </div>
         </div>

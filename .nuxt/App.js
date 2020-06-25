@@ -35,7 +35,7 @@ import _21187fc5 from '../layouts/TopPanel.vue'
 const layouts = { "_admin": _77068119,"_BackToTop": _648210dd,"_default": _6f6c098b,"_error-layout": _7efe0585,"_Footer": _3c52dd31,"_Menubar": _a1937d04,"_SidebarPanel": _488d31c4,"_SiteLoder": _16999d5e,"_TopPanel": _21187fc5 }
 
 export default {
-  head: {"htmlAttrs":{"lang":"fr"},"title":"Nour-M","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Bolster is a clean and modern purse Vue Nuxt.js eCommerce template. This is built on Vue.js, Nuxt.js, Vuex, Firebase, Sass and Bootstrap 4. Bolster has included with an easy checkout feature. It has responsive beautiful design layouts with amazing Retina Ready visual UX\u002F UI experience."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"htmlAttrs":{"lang":"fr"},"title":"Nour-M Boutique","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Bolster is a clean and modern purse Vue Nuxt.js eCommerce template. This is built on Vue.js, Nuxt.js, Vuex, Firebase, Sass and Bootstrap 4. Bolster has included with an easy checkout feature. It has responsive beautiful design layouts with amazing Retina Ready visual UX\u002F UI experience."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })

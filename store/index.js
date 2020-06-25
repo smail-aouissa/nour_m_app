@@ -7,6 +7,7 @@ const state = () => ( {
     totalQuantity: 0,
     orders: [],
     wishlist: [],
+    productCheckout: null
 });
 
 export const totals = (paylodArr) => {
@@ -28,6 +29,7 @@ const mutations = {
         state.cart = this.$cookies.get('cart') || [];
         state.totalAmount = this.$cookies.get('totalAmount') || 0;
         state.totalQuantity = this.$cookies.get('totalQuantity') || 0;
+        state.wishlist = this.$cookies.get('wishlist') || [];
     },
     'GET_ORDER'(state, payload){
         state.orders = payload
@@ -70,7 +72,27 @@ const mutations = {
         state.cart = []
         state.totalAmount = 0
         state.totalQuantity = 0
-    }
+    },
+
+    // WISHLIST
+    'ADD_TO_WISHLIST'(state, payload){
+        state.wishlist = [...state.wishlist, payload]
+        this.$cookies.set('wishlist', state.wishlist);
+    },
+    'DELETE_WISHLIST'(state, id){
+        const currentWishlistToDelete = state.wishlist
+        const indexToDelete = currentWishlistToDelete.findIndex(w => {
+            return w.id == id
+        })
+
+        state.wishlist = [...currentWishlistToDelete.slice(0, indexToDelete), ...currentWishlistToDelete.slice(indexToDelete + 1)]
+        this.$cookies.set('wishlist', state.wishlist);
+    },
+
+    // PRODUCT
+    'SET_PRODUCT'(state, payload){
+        state.productCheckout = payload
+    },
 };
 
 const actions = {
@@ -114,6 +136,21 @@ const actions = {
     cartEmpty({commit}){
         commit('CART_EMPTY')
     },
+
+    // Wishlist
+
+    addToWishlist({ commit }, payload){
+        commit('ADD_TO_WISHLIST', payload)
+    },
+
+    deleteWishlist({ commit }, id){
+        commit('DELETE_WISHLIST', id)
+    },
+
+    // Product
+    setProduct({ commit }, product){
+        commit('SET_PRODUCT', product)
+    },
 };
 
 const getters = {
@@ -129,8 +166,11 @@ const getters = {
     getOrders(state){
         return state.orders
     },
-    getWishlist(state){
+    wishlist(state){
         return state.wishlist
+    },
+    productCheckout(state){
+        return state.productCheckout
     }
 };
 
