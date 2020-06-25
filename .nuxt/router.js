@@ -53,7 +53,7 @@ export const routerOptions = {
   }, {
     path: "/wishlist",
     component: _3b18092a,
-    name: "Wishlist.vue"
+    name: "wishlist"
   }, {
     path: "/category/:id?",
     component: _6ab14c62,
