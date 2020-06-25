@@ -14,7 +14,7 @@
                             <a href="#" class="btn btn-light">View More</a>
                         </div>
 
-                        <a :href="`/collection/${collections[0].id}`" class="link-btn"></a>
+                        <nuxt-link :to="`/collection/${collections[0].id}`" class="link-btn"></nuxt-link>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                                     <h3>{{ collections[1].label }}</h3>
                                 </div>
 
-                                <a :href="`/collection/${collections[1].id}`" class="link-btn"></a>
+                                <nuxt-link :to="`/collection/${collections[1].id}`" class="link-btn"></nuxt-link>
                             </div>
                         </div>
 
@@ -42,7 +42,7 @@
                                     <h3>{{ collections[2].label }}</h3>
                                 </div>
 
-                                <a :href="`/collection/${collections[2].id}`" class="link-btn"></a>
+                                <nuxt-link :to="`/collection/${collections[2].id}`" class="link-btn"></nuxt-link>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                     <h3>{{ collections[3].label }}</h3>
                                 </div>
 
-                                <a :href="`/collection/${collections[3].id}`" class="link-btn"></a>
+                                <nuxt-link :to="`/collection/${collections[3].id}`" class="link-btn"></nuxt-link>
                             </div>
                         </div>
                     </div>
