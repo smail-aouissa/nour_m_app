@@ -83,7 +83,7 @@
                                         </button>
                                     </div>
 
-                                    <a href="#" class="view-full-info">Afficher toutes les informations</a>
+                                    <nuxt-link :to="`/products-details/${item.id}`" class="view-full-info">Afficher toutes les informations</nuxt-link>
                                 </div>
                             </div>
                         </div>

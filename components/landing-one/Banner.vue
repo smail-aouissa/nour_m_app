@@ -43,4 +43,11 @@ export default {
             height: 200px;
         }
     }
+
+    @media only screen and (min-width: 600px) {
+        .slider-height{
+            height: 600px;
+            width: 100%;
+        }
+    }
 </style>

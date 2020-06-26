@@ -64,7 +64,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true,
+    //proxy: true,
     https: true,
     browserBaseURL: 'https://api.noor-m.com/api/'
   },

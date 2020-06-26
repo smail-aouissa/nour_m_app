@@ -3315,14 +3315,14 @@ All Products Area CSS
 Products QuickView Modal Area CSS
 =================================================*/
 .productQuickView {
-    display: block !important;
+    display: flex !important;
     .modal-dialog {
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 800px;
+        margin: auto;
     }
     .modal-content {
         border: none;
-        padding: 40px;
+        padding: 20px;
         border-radius: 0;
 
         button {
