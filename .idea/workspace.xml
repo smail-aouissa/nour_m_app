@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/404.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/category.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/all-products/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/all-products/Sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartItems.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartItems.vue" afterDir="false" />
@@ -12,10 +9,137 @@
       <change beforePath="$PROJECT_DIR$/components/landing-one/Offer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/Offer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/landing-one/ProductItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/products/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/Details.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/LICENSES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/app.938a183.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/commons.app.dfce4c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-brands-400.2ef8ba3.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-brands-400.5e2f921.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-brands-400.98b6db5.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-brands-400.a7b95db.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-regular-400.427d721.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-regular-400.65b9977.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-regular-400.dcce4b7.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-regular-400.e6257a7.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-solid-900.418dad8.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-solid-900.46e7cec.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-solid-900.a714014.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/fa-solid-900.ff8d9f8.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/404.fdef4ee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/about-nour.4b32e6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg1.b75c200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg10.daad579.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg11.daad579.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg12.daad579.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg13.c91cfae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg14.c91cfae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg15.c91cfae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg16.c91cfae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg2.b75c200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg3.b75c200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg4.4031654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg5.4031654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg6.4031654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg7.d88736c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg8.d88736c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/bg9.d88736c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog-img1.1d30fa5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog-img2.1d30fa5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog-img3.1d30fa5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog-img4.1d30fa5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog-img5.1d30fa5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog1.d1e9eb0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog3.d1e9eb0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/blog4.d1e9eb0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/category-no-image.8ea774c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/fa-brands-400.f4ac471.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/fa-regular-400.2d64558.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/fa-solid-900.e124333.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item1.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item10.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item11.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item12.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item2.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item3.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item4.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item5.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item6.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item7.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item8.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/gallery-item9.08fab11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram1.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram2.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram3.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram4.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram5.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram6.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram7.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram8.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/instagram9.0a407a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/logo.2e4d07b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner1.f8f20a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner2.f8f20a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner3.f8f20a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner4.0950cf6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner5.3f45b45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/main-banner6.3f45b45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/no-collection-1.04ced86.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/no-collection-2.d99e314.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/no-collection-3.d99e314.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/no-collection-4.aa9d50d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/no-product.3b3c1bb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/offer-bg.b4359c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/offer-bg2.3f45b45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner1.e9620a8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner2.e9620a8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner3.f6d5014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner4.f6d5014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner5.f6d5014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/partner6.f6d5014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/testimonials-background.2fac6f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/testimonials-bg2.3f45b45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/404.b05f102.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/about.1b35f73.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/cart.9957387.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/categories.029d8d3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/category.9cb71a9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/category.pages/category/_id.pages/collection/_id.1e41fb8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/category/_id.7289648.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/checkout.305f882.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/collection/_id.0a37bbf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/contact.e195dda.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/index.f6c0419.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/product.23ae83b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/product.pages/products-details/_id.a76fd7a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/products-details/_id.4dd6edd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/wishlist.ed02cdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/runtime.4f9b160.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/vendors.app.4058bfe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/about/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/cart/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/categories/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/checkout/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/4/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/contact/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/product/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/wishlist/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Menubar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/SidebarPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/SidebarPanel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/categories.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/products-details/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593181805116</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="wip">
+      <created>1593202245413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1593202245413</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,14 +331,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="563" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593201635705" />
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593200390116">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593210884889">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593200390116" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593181804839">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593210884889" />
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593202245057">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593181804839" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593202245057" />
     <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -224,14 +355,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1592609362482" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593181809777">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593202247265">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593181809777" />
-    <state x="538" y="280" width="604" height="490" key="find.popup" timestamp="1593201815041">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593202247265" />
+    <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="538" y="280" width="604" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593201815041" />
+    <state x="538" y="280" width="604" height="548" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593213462009" />
+    <state x="542" y="320" key="git4idea.merge.GitPullDialog" timestamp="1593202219733">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="542" y="320" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593202219733" />
     <state x="505" y="248" key="run.anything.popup" timestamp="1592928652698">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

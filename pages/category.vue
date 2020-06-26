@@ -43,17 +43,18 @@ import Sidebar from '~/components/all-products/Sidebar';
 import AllProducts from '~/components/all-products/AllProducts';
 import Loader from "~/components/common/Loader";
 export default {
+    name: 'category',
     components: {
         Loader, Sidebar, AllProducts
     },
     data(){
         return {
-            id: this.$route.hash.substring(1),
             busy: false,
             loading: false,
             type: {
                 name: 'Catégorie',
                 url : '/category',
+                id: null
             },
             sections: [], // section => category or collection
             colors: [],
@@ -66,16 +67,27 @@ export default {
         }
     },
     computed:{
+        id(){
+            let path = this.$route.path.split('/')
+            if(/^\d+$/.test(path[path.length - 1])){
+                this.type.id = path[path.length - 1];
+                return path[path.length - 1]
+            }
+            return null;
+        },
         topProduct(){
             return [...this.products].sort(() => 0.5 - Math.random()).slice(0, 3);
         }
     },
     mounted() {
-        if(!/^\d+$/.test(this.id)){
-            this.$router.push('/')
-        }
         this.loadCategory();
         this.loadProducts(this.filter);
+        window.scrollTo(0,0);
+    },
+    watch:{
+        id(newValue){
+            this.loadProducts(this.filter)
+        }
     },
     methods: {
         loadCategory(){
@@ -84,10 +96,12 @@ export default {
                 this.colors = response.colors;
                 this.sizes = response.sizes;
             }).catch(error => {
-                console.log(error)
+                this.$router.push('/');
             })
         },
         loadProducts(data){
+            if(!this.id) this.$router.push('/');
+
             if(data){
                 this.page = 1;
                 this.filter = data ;

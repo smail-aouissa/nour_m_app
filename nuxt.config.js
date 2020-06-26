@@ -74,7 +74,8 @@ export default {
       '/collection/2',
       '/collection/3',
       '/collection/4',
-    ]
+    ],
+    fallback: '404.html'
   },
   /*
   ** Globally configure <nuxt-link> default active class.

@@ -26,7 +26,7 @@
                                             </td>
 
                                             <td class="product-name">
-                                                <nuxt-link :to="`/product#${wishlist.id}`">
+                                                <nuxt-link :to="`/product/${wishlist.id}`">
                                                     {{wishlist.label}}
                                                 </nuxt-link>
                                                 <ul>

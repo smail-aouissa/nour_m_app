@@ -3,7 +3,7 @@
         :class="className" v-if="product">
         <div class="single-product-box">
             <div class="product-image">
-                <nuxt-link v-if="product.photos" :to="`/product#${product.id}`">
+                <nuxt-link v-if="product.photos" :to="`/product/${product.id}`">
                     <img v-if="getImage(product.photos)" :src="getImage(product.photos)"/>
                     <img v-else src="../../assets/images/category-no-image.jpg"/>
                     <img v-if="getImageHover(product.photos)" :src="getImageHover(product.photos)"/>
@@ -35,7 +35,7 @@
 
             <div class="product-content">
                 <h3>
-                    <nuxt-link :to="`/product#${product.id}`">{{product.label}}</nuxt-link>
+                    <nuxt-link :to="`/product/${product.id}`">{{product.label}}</nuxt-link>
                 </h3>
 
                 <div class="product-price">

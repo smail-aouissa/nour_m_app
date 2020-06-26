@@ -45,17 +45,24 @@ export default {
             photo: null,
         }
     },
+    computed:{
+        id(){
+            let path = this.$route.path.split('/')
+            if(/^\d+$/.test(path[path.length - 1])){
+                return path[path.length - 1]
+            }
+            return null;
+        },
+    },
     mounted() {
-        if(!/^\d+$/.test(this.product.id)){
-            this.$router.push('/')
-        }
         this.loadProduct();
+        window.scrollTo(0,0);
     },
     methods: {
         loadProduct(){
-            if(!this.product.id) this.$router.push('/')
+            if(!this.id) this.$router.push('/')
 
-            this.$axios.$get('/product/'+ this.product.id).then(response => {
+            this.$axios.$get('/product/'+ this.id).then(response => {
                 this.product = response.product;
                 this.relatedProducts = response.relatedProducts;
             }).catch(error => {

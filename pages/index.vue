@@ -7,6 +7,7 @@
     <BestSellers :products="bestSellersProducts"></BestSellers>
     <Testimonials :testimonials="testimonials"></Testimonials>
     <Facility></Facility>
+    <loader v-if="loading"></loader>
   </div>
 </template>
 
@@ -15,22 +16,21 @@ import Banner from '../components/landing-one/Banner';
 import Offer from '../components/landing-one/Offer';
 import LatestProducts from '../components/landing-one/LatestProducts';
 import ProductCategory from '../components/landing-one/ProductCategory';
-import TrendingProducts from '../components/landing-one/TrendingProducts';
 import BestSellers from '../components/landing-one/BestSellers';
 import Facility from '../components/landing-one/Facility';
 import Testimonials from '../components/landing-one/Testimonials';
-import News from '../components/landing-one/News';
 import Subscribe from '../components/common/Subscribe';
-import Partner from '../components/common/Partner';
-import InstagramPhotos from '../components/common/InstagramPhotos';
+import Loader from "~/components/common/Loader";
 
 export default {
   components: {
+    Loader,
     Banner, Offer, LatestProducts, ProductCategory,
     BestSellers, Facility, Testimonials, Subscribe,
   },
   data(){
     return {
+      loading: true,
       sliders: [],
       categories: [],
       latestProducts : [],
@@ -51,8 +51,9 @@ export default {
         this.bestSellersProducts = response.bestSellersProducts;
         this.collections = response.collections;
         this.testimonials = response.testimonials;
+        this.loading = false;
       }).catch(error => {
-        console.log(error)
+        this.loading = false;
       })
     }
   }

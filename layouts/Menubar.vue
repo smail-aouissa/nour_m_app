@@ -24,7 +24,7 @@
                                     <ul class="dropdown-menu">
                                         <li v-for="(category , key) in categories" :key="key" class="nav-item">
                                             <div class="d-flex justify-content-between">
-                                                <nuxt-link :to="`/category#${category.id}`" class="nav-link">{{category.label}}</nuxt-link>
+                                                <nuxt-link :to="`/category/${category.id}`" class="nav-link">{{category.label}}</nuxt-link>
                                                 <div v-if="category.children && category.children.length">
                                                     <i style="font-size: 10px" class="fas fa-chevron-right mr-2"></i>
                                                 </div>
@@ -32,7 +32,7 @@
                                             <div v-if="category.children && category.children.length">
                                                 <ul class="dropdown-menu">
                                                     <li v-for="(cat , key) in category.children" :key="key" class="nav-item">
-                                                        <nuxt-link :to="`/category#${cat.id}`" class="nav-link">{{cat.label}}</nuxt-link>
+                                                        <nuxt-link :to="`/category/${cat.id}`" class="nav-link">{{cat.label}}</nuxt-link>
                                                     </li>
                                                 </ul>
                                             </div>
