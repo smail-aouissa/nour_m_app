@@ -15,7 +15,6 @@
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
     "cookie-universal-nuxt": "^2.1.4",
-    "firebase": "^7.9.3",
     "nuxt": "^2.0.0",
     "range-slider-vue": "^1.0.3",
     "vue-backtotop": "^1.6.1",
