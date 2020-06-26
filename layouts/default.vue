@@ -32,7 +32,7 @@ export default {
       this.isShowing = value;
     },
     loadData(){
-      this.$axios.$get('/').then(response => {
+      this.$axios.$get('/layout').then(response => {
         this.topPanelItems = response.topPanelItems;
         this.categories = response.categories;
         setTimeout(() => { this.loading = false; }, 500);

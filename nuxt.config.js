@@ -66,7 +66,7 @@ export default {
   axios: {
     proxy: true,
     https: true,
-    browserBaseURL: 'https://api.noor-m.com/api'
+    browserBaseURL: 'https://api.noor-m.com/api/'
   },
   /*
   ** Globally configure <nuxt-link> default active class.
