@@ -21,9 +21,9 @@
 
                                         <tr v-for="(cart, i) in cart" :key="i">
                                             <td class="product-thumbnail">
-                                                <a href="#">
+                                                <nuxt-link :to="`/products-details/${cart.id}`">
                                                     <img :src="cart.image" alt="image de produit" />
-                                                </a>
+                                                </nuxt-link>
                                             </td>
 
                                             <td class="product-name">
@@ -71,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-lg-7 col-md-7">
                                         <div class="continue-shopping-box">
-                                            <nuxt-link to="/products" class="btn btn-light">Continuer vos achats</nuxt-link>
+                                            <nuxt-link to="/" class="btn btn-light">Continuer vos achats</nuxt-link>
                                         </div>
                                     </div>
 

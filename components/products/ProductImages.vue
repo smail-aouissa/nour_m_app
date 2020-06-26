@@ -44,3 +44,10 @@ export default {
     }
 }
 </script>
+
+<style>
+    .vueperslide{
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+</style>

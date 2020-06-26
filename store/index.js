@@ -67,6 +67,10 @@ const mutations = {
 
         state.totalAmount = totals(payload).amount
         state.totalQuantity = totals(payload).qty
+
+        this.$cookies.set('cart', state.cart);
+        this.$cookies.set('totalAmount', state.totalAmount);
+        this.$cookies.set('totalQuantity', state.totalQuantity);
     }, 
     'CART_EMPTY'(state){
         state.cart = []

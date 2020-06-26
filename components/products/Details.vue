@@ -61,12 +61,12 @@
             </div>
 
             <div class="wishlist-compare-btn">
-                <a href="#" class="btn btn-light" @click="addToWishlist(product)"><i class="far fa-heart"></i> Ajouter au favoris</a>
+                <a href="javascript:void(0)" class="btn btn-light" @click="addToWishlist(product)"><i class="far fa-heart"></i> Ajouter au favoris</a>
             </div>
 
             <div class="buy-checkbox-btn">
                 <div class="item">
-                    <a href="#" @click="buyProduct" class="btn btn-primary">Achetez-le maintenant!</a>
+                    <a href="javascript:void(0)" @click="buyProduct" class="btn btn-primary">Achetez-le maintenant!</a>
                 </div>
             </div>
         </div>
@@ -181,7 +181,6 @@ export default {
                 color: this.selectedColor,
                 size: this.selectedSize
             }]
-            //this.$cookies.set('product-checkout',product);
             this.$store.dispatch('setProduct', product)
             this.$router.push('/checkout?product='+this.product.id)
         }

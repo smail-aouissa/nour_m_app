@@ -12,7 +12,7 @@ export const mutations = {
         store.isNavOpen = !store.isNavOpen
     },
     toggleQuickView(item) {
-        store.item = item
+        if(item) store.item = item
         store.isQuickViewOpen = !store.isQuickViewOpen
     },
 };

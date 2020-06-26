@@ -11,7 +11,7 @@
                 <b-collapse visible id="collapse-2">
                     <ul class="collections-list-row">
                         <li v-for="(section, key) in sections" :key="key" :class="{'active': parseInt(currentId) === section.id }" >
-                            <a :href="`${type.url}/${section.id}`">{{ section.label }}</a>
+                            <nuxt-link :to="`${type.url}/${section.id}`">{{ section.label }}</nuxt-link>
                         </li>
                     </ul>
                 </b-collapse>
@@ -107,13 +107,17 @@
                 <div class="aside-single-products"
                      v-for="(product, key) in topProducts" :key="key">
                     <div class="products-image">
-                        <a :href="`/products-details/${product.id}`">
+                        <nuxt-link :to="`/products-details/${product.id}`">
                             <img :src="getImage(product.photos)" alt="image">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <div class="products-content">
-                        <span v-if="product.category"><a :href="`/category/${product.category.id}`">{{product.category.label}}</a></span>
-                        <h3><a :href="`/products-details/${product.id}`">{{product.label}}</a></h3>
+                        <span v-if="product.category">
+                            <nuxt-link :to="`/category/${product.category.id}`">{{product.category.label}}</nuxt-link>
+                        </span>
+                        <h3>
+                            <nuxt-link :to="`/products-details/${product.id}`">{{product.label}}</nuxt-link>
+                        </h3>
 
                         <div class="product-price">
                             <span class="new-price">{{product.price - product.offerPrice}}

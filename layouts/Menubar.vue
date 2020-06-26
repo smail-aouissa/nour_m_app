@@ -15,9 +15,12 @@
                         <b-collapse class="collapse navbar-collapse" id="navbarSupportedContent" is-nav>
                             <ul class="navbar-nav">
 
-                                <li class="nav-item p-relative"><a href="/" class="nav-link">Accueil</a></li>
+                                <li class="nav-item p-relative">
+                                    <nuxt-link to="/" class="nav-link">Accueil</nuxt-link>
+                                </li>
 
-                                <li class="nav-item p-relative"><a class="nav-link">Catégories <i class="fas fa-chevron-down"></i></a>
+                                <li class="nav-item p-relative">
+                                    <a class="nav-link">Catégories <i class="fas fa-chevron-down"></i></a>
                                     <ul class="dropdown-menu">
                                         <li v-for="(category , key) in categories" :key="key" class="nav-item">
                                             <div class="d-flex justify-content-between">
@@ -56,7 +59,7 @@
 
                             <div class="others-option">
                                 <div class="option-item">
-                                    <a @click.prevent="toggle" href="#">
+                                    <a @click.prevent="toggle" href="javascript:void(0)">
                                         Cart({{cart ? cart.length : 0}}) <i class="fas fa-shopping-bag"></i>
                                     </a>
                                 </div>

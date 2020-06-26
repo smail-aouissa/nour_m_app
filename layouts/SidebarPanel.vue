@@ -10,8 +10,7 @@
 
                         <div 
                             class="modal-body"
-                            v-if="cart && cart.length > 0"
-                        >
+                            v-if="cart && cart.length > 0">
                             <h3>Mon Panier ({{cart.length}})</h3>
 
                             <div class="product-cart-content">
@@ -20,11 +19,15 @@
                                     class="product-cart"
                                     v-for="cart in cart">
                                     <div class="product-image">
-                                        <img :src="cart.image" alt="Image de produit" />
+                                        <nuxt-link :to="`/products-details/${cart.id}`">
+                                            <img  :src="cart.image" alt="Image de produit" />
+                                        </nuxt-link>
                                     </div>
 
                                     <div class="product-content">
-                                        <h3><a :href="`/products-details/${cart.id}`">{{cart.label}}</a></h3>
+                                        <h3>
+                                            <nuxt-link :to="`/products-details/${cart.id}`">{{cart.label}}</nuxt-link>
+                                        </h3>
                                         <div class="d-flex align-items-center">
                                             <span v-if="cart.color" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
                                             <span v-else>Non défini</span>
@@ -62,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+                <div  @click="closeSidebarPanel" style="width: 100%; height: 100vh"></div>
             </div>
         </transition>
         <!-- End Shopping Cart Modal -->

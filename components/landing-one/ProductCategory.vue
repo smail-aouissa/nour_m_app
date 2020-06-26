@@ -11,7 +11,7 @@
 
                         <div class="category-content">
                             <h3>{{ collections[0].label }}</h3>
-                            <a href="#" class="btn btn-light">View More</a>
+                            <nuxt-link :to="`/collection/${collections[0].id}`" class="btn btn-light">Voir plus</nuxt-link>
                         </div>
 
                         <nuxt-link :to="`/collection/${collections[0].id}`" class="link-btn"></nuxt-link>

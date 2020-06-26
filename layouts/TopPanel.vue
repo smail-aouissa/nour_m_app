@@ -16,9 +16,9 @@
                                     <div class="single-item-box">
                                         <p>
                                             {{item.text}}
-                                            <a v-if="item.link" :href="item.link">
-                                                <strong class="underline font-sans">voir plus!</strong>
-                                            </a>
+                                            <nuxt-link v-if="item.link" :to="item.link">
+                                                <strong class="underline font-sans text-uppercase">Voir plus!</strong>
+                                            </nuxt-link>
                                         </p>
                                     </div>
                                 </slide>

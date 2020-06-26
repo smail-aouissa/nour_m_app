@@ -83,7 +83,7 @@
                                         </button>
                                     </div>
 
-                                    <nuxt-link :to="`/products-details/${item.id}`" class="view-full-info">Afficher toutes les informations</nuxt-link>
+                                    <a href="javascript:void(0)" @click="showProduct" class="view-full-info">Afficher toutes les informations</a>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,8 @@ export default {
             quantity: 1,
             stock: 1,
             selectedColor: null,
-            selectedSize: null
+            selectedSize: null,
+            product: null,
         }
     },
     methods: {
@@ -112,7 +113,7 @@ export default {
             this.quantity= 1;
             this.selectedColor= null;
             this.selectedSize= null;
-            mutations.toggleQuickView(null);
+            mutations.toggleQuickView();
         },
         addToCart(item){
             const product = [{
@@ -179,6 +180,10 @@ export default {
         selectColor(color){
             this.selectedColor = color;
             if(color.quantity) this.stock = color.quantity;
+        },
+        showProduct(){
+            this.closeQuickView();
+            this.$router.push(`/products-details/${this.item.id}`);
         }
     },
     computed: {
@@ -189,7 +194,9 @@ export default {
             return this.$store.getters.cart
         },
         item(){
-            this.stock = store.item.colors.reduce((a,b) => a + (b.quantity || 0) , 0);
+            if(store.item?.colors){
+                this.stock = store.item.colors.reduce((a,b) => a + (b.quantity || 0) , 0) ;
+            }
             return store.item;
         }
     }

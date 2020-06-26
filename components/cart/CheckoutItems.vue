@@ -120,7 +120,7 @@
 
                                                 <td class="order-subtotal-price">
                                                     <span class="order-subtotal-amount">
-                                                        {{parseFloat(cartTotal).toFixed(2)}}
+                                                        {{parseFloat(total).toFixed(2)}}
                                                         <span style="font-size: 11px"> DZD</span>
                                                     </span>
                                                 </td>
@@ -201,8 +201,11 @@ export default {
         cart(){
             return this.$store.getters.cart
         },
+        total(){
+            return this.$store.getters.totalAmount || 0;
+        },
         cartTotal(){
-            return this.$store.getters.totalAmount
+            return this.$store.getters.totalAmount + (this.personDetails.province?.price || 0.00);
         }
     },
     mounted() {

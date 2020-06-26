@@ -1378,8 +1378,16 @@ Modal CSS
                         left: 0;
                         top: 0;
                         width: 50px;
+
+                        img{
+                            max-height: 80px;
+                        }
                     }
                     .product-content {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height: 80px;
                         h3 {
                             font-size: 13px;
                             text-transform: initial;

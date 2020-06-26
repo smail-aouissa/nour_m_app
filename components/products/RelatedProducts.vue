@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="col-lg-12 col-md-12">
         <div class="related-products-area">
             <div class="container">
                 <div class="section-title">
