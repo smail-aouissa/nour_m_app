@@ -19,14 +19,14 @@
                                     class="product-cart"
                                     v-for="cart in cart">
                                     <div class="product-image">
-                                        <nuxt-link :to="`/products-details/${cart.id}`">
+                                        <nuxt-link :to="`/product#${cart.id}`">
                                             <img  :src="cart.image" alt="Image de produit" />
                                         </nuxt-link>
                                     </div>
 
                                     <div class="product-content">
                                         <h3>
-                                            <nuxt-link :to="`/products-details/${cart.id}`">{{cart.label}}</nuxt-link>
+                                            <nuxt-link :to="`/product#${cart.id}`">{{cart.label}}</nuxt-link>
                                         </h3>
                                         <div class="d-flex align-items-center">
                                             <span v-if="cart.color" :style="`background-color: ${cart.color.code};height: 12px;width: 12px;border-radius: 30px;`"></span>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div  @click="closeSidebarPanel" style="width: 100%; height: 100vh"></div>
+                <div v-if="isPanelOpen" @click="closeSidebarPanel" style="width: 100%; height: 100vh"></div>
             </div>
         </transition>
         <!-- End Shopping Cart Modal -->

@@ -18,7 +18,10 @@
 
             <ul class="product-info">
                 <li><span>Disponibilité:</span> <a>en stock ({{stock || 1 }} produits)</a></li>
-                <li><span>Type de produit:</span> <a>{{ product.category ? product.category.label : '-' }}</a></li>
+                <li>
+                    <span>Type de produit:</span>
+                    <a>{{ product.category ? product.category.label : '-' }}</a>
+                </li>
             </ul>
 
             <div v-if="product.colors && product.colors.length > 0" class="product-color-switch">

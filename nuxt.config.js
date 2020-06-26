@@ -68,6 +68,14 @@ export default {
     https: true,
     browserBaseURL: 'https://api.noor-m.com/api/'
   },
+  generate: {
+    routes: [
+      '/collection/1',
+      '/collection/2',
+      '/collection/3',
+      '/collection/4',
+    ]
+  },
   /*
   ** Globally configure <nuxt-link> default active class.
   */

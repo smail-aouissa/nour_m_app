@@ -183,7 +183,7 @@ export default {
         },
         showProduct(){
             this.closeQuickView();
-            this.$router.push(`/products-details/${this.item.id}`);
+            this.$router.push(`/product#${this.item.id}`);
         }
     },
     computed: {

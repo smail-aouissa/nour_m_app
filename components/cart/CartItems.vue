@@ -21,13 +21,13 @@
 
                                         <tr v-for="(cart, i) in cart" :key="i">
                                             <td class="product-thumbnail">
-                                                <nuxt-link :to="`/products-details/${cart.id}`">
+                                                <nuxt-link :to="`/product#${cart.id}`">
                                                     <img :src="cart.image" alt="image de produit" />
                                                 </nuxt-link>
                                             </td>
 
                                             <td class="product-name">
-                                                <nuxt-link :to="`/products-details/${cart.id}`">
+                                                <nuxt-link :to="`/product#${cart.id}`">
                                                     {{cart.label}}
                                                 </nuxt-link>
                                                 <ul>
