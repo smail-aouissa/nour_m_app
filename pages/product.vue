@@ -22,6 +22,7 @@
                 </div>
             </div>
         </section>
+        <loader v-if="loading"></loader>
     </div>
 </template>
 
@@ -32,12 +33,15 @@ import ProductImages from '../components/products/ProductImages';
 import Details from '../components/products/Details';
 import DetailsInfo from '../components/products/DetailsInfo';
 import RelatedProducts from '../components/products/RelatedProducts';
+import Loader from "~/components/common/Loader";
 export default {
     components: {
+        Loader,
         ProductImages, Details, DetailsInfo, RelatedProducts
     },
     data(){
         return {
+            loading: true,
             product:{
                 id: this.$route.hash.substring(1),
             },
@@ -65,8 +69,9 @@ export default {
             this.$axios.$get('/product/'+ this.id).then(response => {
                 this.product = response.product;
                 this.relatedProducts = response.relatedProducts;
+                this.loading = false;
             }).catch(error => {
-                console.log(error)
+                this.loading = false;
             })
         },
         changedPhoto(photo){

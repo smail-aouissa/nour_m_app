@@ -76,6 +76,10 @@ const mutations = {
         state.cart = []
         state.totalAmount = 0
         state.totalQuantity = 0
+
+        this.$cookies.set('cart', state.cart);
+        this.$cookies.set('totalAmount', state.totalAmount);
+        this.$cookies.set('totalQuantity', state.totalQuantity);
     },
 
     // WISHLIST

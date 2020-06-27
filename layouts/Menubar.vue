@@ -66,6 +66,18 @@
                             </div>
                         </b-collapse>
                     </nav>
+
+                    <!--nav class="navbar navbar-expand-md navbar-light mobile">
+                        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </div>
+                        <nuxt-link class="navbar-brand" to="/">
+                            <img src="../assets/img/logo.png" style="height: 50px" alt="logo">
+                        </nuxt-link>
+
+                    </nav-->
                 </div>
             </div>
         </div>
@@ -111,3 +123,19 @@ export default {
     }
 }
 </script>
+
+<style>
+    @media screen and (max-width : 1920px){
+        .mobile{
+            display: none;
+        }
+    }
+    @media screen and (max-width : 600px){
+        .desk{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+    }
+</style>
