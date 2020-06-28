@@ -28,12 +28,6 @@ export default {
             type: String,
         }
     },
-    watch:{
-        photo(newVal){
-            if(this.photos.indexOf( p => p ))
-                console.log(newVal)
-        },
-    },
     computed:{
         images(){
             if(this.photo)
