@@ -53,4 +53,9 @@ export default {
     this.$store.dispatch('initStore')
   }
 }
+Array.from(document.getElementsByClassName("product-image")).forEach(
+    function(element, index, array) {
+        // do stuff
+    }
+);
 </script>
