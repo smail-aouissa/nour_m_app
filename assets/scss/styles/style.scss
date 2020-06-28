@@ -8893,11 +8893,12 @@ Footer Area CSS
             color: $paragraph-color;
             margin-bottom: 8px;
             font-size: 13px;
+            
 
             a {
                 color: $paragraph-color;
                 display: inline-block;
-
+                margin-left: 8px;
                 &:hover, &:focus {
                     color: $black-color;
                     padding-left: 5px;
@@ -8916,11 +8917,13 @@ Footer Area CSS
         li {
             color: $paragraph-color;
             margin-bottom: 8px;
+            margin-bottom: 8px;
             font-size: 13px;
-
+            
             a {
                 color: $paragraph-color;
                 display: inline-block;
+                
 
                 &:hover, &:focus {
                     color: $black-color;
@@ -8936,7 +8939,21 @@ Footer Area CSS
         padding: 0;
         margin: 0;
         list-style-type: none;
+        .contact-info{
+            i{
+                position: initial;
+            }
+            a{
+                
+                &:hover, &:focus {
+                    i{
+                        
+                        color: #fff;
+                    }
+                }
+            }
 
+        } 
         li {
             color: $paragraph-color;
             margin-bottom: 10px;

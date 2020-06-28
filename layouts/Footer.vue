@@ -17,10 +17,10 @@
                         <h3>Liens rapides</h3>
 
                         <ul class="quick-links">
-                            <li><nuxt-link to="/">Page d'ccueil</nuxt-link></li>
-                            <li><nuxt-link to="/cart">Mon panier</nuxt-link></li>
-                            <li><nuxt-link to="/wishlist">Favoris</nuxt-link></li>
-                            <li><nuxt-link to="/about">A propos de moi</nuxt-link></li>
+                            <li><i class="fa fa-home" aria-hidden="true"></i><nuxt-link to="/">Page d'Accueil</nuxt-link></li>
+                            <li><i class="fa fa-shopping-cart" aria-hidden="true"></i><nuxt-link to="/cart">Mon panier</nuxt-link></li>
+                            <li><i class="fa fa-heart" aria-hidden="true"></i><nuxt-link to="/wishlist">Favoris</nuxt-link></li>
+                            <li><i class="fa fa-user" aria-hidden="true"></i><nuxt-link to="/about">A propos de moi</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -30,10 +30,18 @@
                         <h3>Contactez-nous</h3>
 
                         <ul class="footer-contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> Location: Centre commercial « frique Bazar » Birkhadem, Alger</li>
-                            <li><i class="fas fa-phone"></i> Appelez-nous: <a href="#">+213 (0) 553 31 09 76</a></li>
+                            <!-- <li><i class="fas fa-map-marker-alt"></i> Location: Centre commercial « frique Bazar » Birkhadem, Alger</li> -->
+                            <li><i class="fas fa-phone"></i> Appelez-nous: <a href="#">+213 (0) 540 58 70 19</a></li>
                             <li><i class="far fa-envelope"></i> Envoyez-nous un email: <a href="mailto:contact@noor-m.com">contact@noor-m.com</a></li>
-                            <li><i class="fas fa-door-open"></i> Heures d'ouverture: <a href="#">8H – 17H</a></li>
+                            <!-- <li><i class="fas fa-door-open"></i> Heures d'ouverture: <a href="#">8H – 17H</a></li> -->
+                            <div class="contact-info mt-1">
+                                
+                                <ul class="social">
+                                    <li><a href="https://web.facebook.com/NOOR.M.COLLECTION"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/noor_m_officiel"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UChWu2gyOv_jObFMaocwOj6w"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
                         </ul>
                     </div>
                 </div>
