@@ -10,7 +10,7 @@ $value_five: 1199px;
 @media only #{$media} and ($feature_max : $value_one) {
 
     .btn {
-        padding: 11px 23px;
+        padding: 8px;
         font-size: 12px;
     }
 
@@ -154,7 +154,7 @@ $value_five: 1199px;
         }
     }
     .main-banner-content {
-        text-align: center;
+        // text-align: center;
         max-width: unset;
         
         span {
@@ -162,14 +162,14 @@ $value_five: 1199px;
             margin-bottom: 6px;
         }
         h1 {
-            font-size: 22px;
+            font-size: 17px;
             line-height: 1.4;
             margin: {
                 bottom: 10px;
             }
         }
         p {
-            font-size: 15px;
+            font-size: 13px;
             margin-bottom: 20px;
         }
         .btn-primary {

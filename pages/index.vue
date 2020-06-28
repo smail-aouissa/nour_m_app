@@ -59,3 +59,12 @@ export default {
   }
 }
 </script>
+<style>
+@media only screen and (max-width: 767px){
+  .navbar-area {
+      
+      padding-bottom: 0px;
+  }
+
+}
+</style>

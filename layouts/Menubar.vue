@@ -71,27 +71,46 @@
                 <div class="mobile">
                     <div style="width: 100vw;height: 20px" class="d-flex justify-content-between">
                         <div class="d-flex justify-content-center align-items-center">
-                            <nuxt-link to="/">
-                                <img class="mx-2" src="../assets/img/logo.png" style="height: 50px" alt="logo">
-                            </nuxt-link>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <nuxt-link style="color: black" to="/cart">
-                                <i class="fas fa-shopping-bag mr-3" style="font-size: 28px"></i>
-                            </nuxt-link>
+                            
                             <a class="mr-3" @click="burger()">
-                                <i class="fas fa-bars" style="font-size: 28px"></i>
+                                <i class="fas fa-bars" style="font-size: 21px;margin-left:8px"></i>
                             </a>
                         </div>
                         <div style="position: fixed; z-index: 10">
                             <span id="burger"></span>
                             <i id="quit" class="fas fa-times" @click="quit()"></i>
                             <div class="elementToFadeInAndOut overflow-auto" v-if="manuOpend" id="links" @click="quit()">
-                                <nuxt-link v-for="(category , key) in allCategories" :key="key" to="/about">{{category.label}}</nuxt-link>
+                                <nuxt-link v-for="(category , key) in allCategories" :key="key" :to="`/category/${category.id}`">{{category.label}}</nuxt-link>
                                 <nuxt-link to="/wishlist">Favoris</nuxt-link>
                                 <nuxt-link to="/about">A propos</nuxt-link>
                                 <nuxt-link to="/contact">Contact</nuxt-link>
                             </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <nuxt-link to="/">
+                                <img class="mx-2" src="../assets/img/logo.png" style="height: 50px" alt="logo">
+                            </nuxt-link>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <nuxt-link style="color: black" to="/cart">
+                                <i class="fas fa-shopping-bag mr-3" style="font-size: 21px"></i>
+                            </nuxt-link>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="homepage-toptab">
+                        <div class="homepage-toptab__inner">
+                            <ul class="homepage-toptab__scrollbox j-homepage-toptab__scrollbox">
+                            
+                                <li v-for="(category , key) in allCategories" :key="key" class="homepage-toptab__item homepage-toptab__item_active">
+                                    <nuxt-link  :to="`/category/${category.id}`">
+                                    
+                                        <span class="homepage-toptab__item-text">{{category.label}}</span>
+                                    </nuxt-link>
+                                </li>
+                                
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -171,6 +190,63 @@ export default {
 </script>
 
 <style scoped>
+    .homepage-toptab a{
+        color:#848181
+    }
+    .homepage-toptab a.active{
+        color:#000
+    }
+    .homepage-toptab a.active:before{
+        border-bottom: 3px solid #222;
+    }
+    .homepage-toptab {
+        position: -webkit-sticky;
+        position: sticky;
+        margin-top: 1.5rem;
+        width: 100%;
+        height: 2.1733rem;
+        overflow: hidden;
+        
+        -webkit-transform: translateZ(10px);
+        transform: translateZ(10px);
+    }
+    .homepage-toptab__inner {
+        position: relative;
+        width: 100%;
+        height: 2.1733rem;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .homepage-toptab__scrollbox {
+        display: -webkit-box;
+        display: flex;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        left:-33px
+    }
+    .homepage-toptab__item {
+        -webkit-box-flex: 1;
+        flex: 1;
+        display: inline-block;
+        padding: 0 .3467rem;
+        height: 2.5rem;
+        line-height: 2.1733rem;
+        color: #666;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: top;
+        flex-basis: auto;
+    }
+    .homepage-toptab__item-text {
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+        
+        height: 1.1733rem;
+        text-decoration: none;
+    }
     .elementToFadeInAndOut {
         opacity: 1;
         animation: fade 2s;
