@@ -3,8 +3,8 @@
         <div class="page-title-area">
             <div class="container">
                 <ul>
-                    <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li>404 Not Found</li>
+                    <li><nuxt-link to="/">Accueil</nuxt-link></li>
+                    <li>404 introuvable</li>
                 </ul>
             </div>
         </div>
@@ -14,10 +14,10 @@
                 <div class="error-content">
                     <img src="../assets/img/404.png" alt="error">
 
-                    <h3>Page Not Found</h3>
-                    <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+                    <h3>Page non trouvée</h3>
+                    <p>La page que vous recherchez a peut-être été supprimée si son nom a changé ou est temporairement indisponible.</p>
 
-                    <nuxt-link to="/" class="btn btn-light">Go to Home</nuxt-link>
+                    <nuxt-link to="/" class="btn btn-light">Aller à la page d'accueil</nuxt-link>
                 </div>
             </div>
         </section>
