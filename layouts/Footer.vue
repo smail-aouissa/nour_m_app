@@ -2,16 +2,11 @@
     <footer class="footer-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <div class="logo">
-                            <nuxt-link to="/"><img src="../assets/img/logo.png" alt="logo"></nuxt-link>
-                        </div>
-                    </div>
-                </div>
+                
 
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="single-footer-widget" style="background-color:cornsilk;padding: 21px;border-radius: 15px;">
+                        <nuxt-link to="/"><span style="display: inline-flex;"><img width="100px" src="../assets/img/logo.png" alt="logo"></span></nuxt-link>
                         <p>Fondatrice d’ une ligne de vêtement pour femmes «  <strong>NOOR M PRO</strong> » influenceuse avec plus d’un million d’abonnés sur son compte instagram
                             La marque noor m aspirent à revitaliser le style de la femmes moderne algériennes </p>
                     </div>
