@@ -76,13 +76,13 @@ export default {
       '/collection/3',
       '/collection/4',
     ],
-    fallback: '404.html'
   },
   /*
   ** Globally configure <nuxt-link> default active class.
   */
   router: {
-    linkActiveClass: 'active'
+    linkActiveClass: 'active',
+    mode: 'hash'
   },
   /*
   ** Build configuration
