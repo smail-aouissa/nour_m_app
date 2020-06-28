@@ -1,10 +1,10 @@
 <template>
     <div>
         <!-- Start Navbar Area -->
-        <div :class="['navbar-area', {'is-sticky': isSticky}]">
+        <div :class="['navbar-area', {'is-sticky': isSticky}]" class="">
             <div class="comero-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
+                <div class="container desk">
+                    <nav class="navbar navbar-expand-md navbar-light ">
                         <nuxt-link class="navbar-brand" to="/">
                             <img src="../assets/img/logo.png" style="height: 50px" alt="logo">
                         </nuxt-link>
@@ -66,18 +66,34 @@
                             </div>
                         </b-collapse>
                     </nav>
-
-                    <!--nav class="navbar navbar-expand-md navbar-light mobile">
-                        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
+                </div>
+                <!-- Header Mobile -->
+                <div class="mobile">
+                    <div style="width: 100vw;height: 20px" class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <nuxt-link to="/">
+                                <img class="mx-2" src="../assets/img/logo.png" style="height: 50px" alt="logo">
+                            </nuxt-link>
                         </div>
-                        <nuxt-link class="navbar-brand" to="/">
-                            <img src="../assets/img/logo.png" style="height: 50px" alt="logo">
-                        </nuxt-link>
-
-                    </nav-->
+                        <div class="d-flex justify-content-center align-items-center">
+                            <nuxt-link style="color: black" to="/cart">
+                                <i class="fas fa-shopping-bag mr-3" style="font-size: 28px"></i>
+                            </nuxt-link>
+                            <a class="mr-3" @click="burger()">
+                                <i class="fas fa-bars" style="font-size: 28px"></i>
+                            </a>
+                        </div>
+                        <div style="position: fixed; z-index: 10">
+                            <span id="burger"></span>
+                            <i id="quit" class="fas fa-times" @click="quit()"></i>
+                            <div class="elementToFadeInAndOut overflow-auto" v-if="manuOpend" id="links" @click="quit()">
+                                <nuxt-link v-for="(category , key) in allCategories" :key="key" to="/about">{{category.label}}</nuxt-link>
+                                <nuxt-link to="/wishlist">Favoris</nuxt-link>
+                                <nuxt-link to="/about">A propos</nuxt-link>
+                                <nuxt-link to="/contact">Contact</nuxt-link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,44 +114,126 @@ export default {
     data(){
         return {
             isSticky: false,
+            manuOpend: false,
         }
     },
     mounted(){
-        const that = this;
         window.addEventListener('scroll', () => {
-            let scrollPos = window.scrollY;
-            if(scrollPos >= 100){
-                that.isSticky = true;
-            } else {
-                that.isSticky = false;
-            }
+            this.checkScroll();
         })
     },
     computed: {
         cart(){
             return this.$store.getters.cart
+        },
+        allCategories(){
+            let all = [...this.categories];
+            this.categories.forEach((category)=> {
+                if(category.children && category.children.length){
+                    all.concat(category.children);
+                }
+            })
+            return this.categories
         }
     },
     methods: {
         toggle() {
             mutations.toggleNav()
+        },
+        checkScroll(){
+            let scrollPos = window.scrollY;
+            if(scrollPos >= 100 && !this.manuOpend){
+                this.isSticky = true;
+            } else {
+                this.isSticky = false;
+            }
+        },
+        burger(){
+            var burger = document.getElementById('burger');
+            var links = document.getElementById('links');
+            var quit = document.getElementById('quit');
+            burger.style.padding = '0px 0px 210vw 200vw';
+            quit.style.display = 'inline';
+            this.manuOpend = true;
+        },
+        quit(){
+            var burger = document.getElementById('burger');
+            var links = document.getElementById('links');
+            var quit = document.getElementById('quit');
+            burger.style.padding = '0px';
+            quit.style.display = 'none';
+            this.manuOpend = false;
+            this.checkScroll();
         }
     }
 }
+
 </script>
 
-<style>
+<style scoped>
+    .elementToFadeInAndOut {
+        opacity: 1;
+        animation: fade 2s;
+    }
+
+    @keyframes fade {
+        0%,100% { opacity: 0 }
+        100% { opacity: 1 }
+    }
+
     @media screen and (max-width : 1920px){
         .mobile{
             display: none;
         }
     }
-    @media screen and (max-width : 600px){
+    @media screen and (max-width : 768px){
         .desk{
             display: none;
         }
         .mobile{
             display: block;
         }
+    }
+
+    h1 { position: absolute; top: 100px; left: 100px; }
+    #burger{
+        position: fixed;
+        right: 0;
+        top: 0;
+        color: white;
+        background: linear-gradient(45deg, #2c3e50 10%, #222222);
+        font-size: 22px;
+        padding: 0px;
+        border-radius: 0% 0% 0% 100%;
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    #quit{
+        position: fixed;
+        top: 0;
+        color: white;
+        font-size: 22px;
+        padding: 16px;
+        display: none;
+        cursor: pointer;
+    }
+
+    #links{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 80vh;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    #links a{
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 2em;
+        padding: 5px 0px;
+        z-index: 10;
     }
 </style>

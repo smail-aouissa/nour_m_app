@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="wip">
       <change afterPath="$PROJECT_DIR$/static/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/app.07d2c9e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/404.c5c6907.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/about.90a4222.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/cart.42dd4dc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/category.90bdefd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/category/_id.6a4729a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/checkout.f6a984e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/collection/_id.c44ebd3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/contact.7c67ac3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/index.08a6164.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/product/_id.807d0ff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/pages/wishlist.8c3e70c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/runtime.3891070.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_nuxt/vendors.app.cc3c2cd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/cart/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/cart/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/checkout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/checkout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/collection/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/collection/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/collection/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/collection/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/collection/4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/contact/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/contact/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/wishlist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/wishlist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Menubar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/404.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +90,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/scss/styles" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages/collection" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/assets/scss/styles" />
       <recent name="$PROJECT_DIR$/layouts" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/components/cart" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/collection" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -207,11 +258,30 @@
       <option name="project" value="LOCAL" />
       <updated>1593226334788</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="wip">
+      <created>1593265325324</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1593265325324</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -228,14 +298,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="563" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593201635705" />
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593225858575">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593305578893">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593225858575" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593262219904">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593305578893" />
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593308972451">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593262219904" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593308972451" />
     <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -248,14 +318,22 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="636" y="229" key="Github.UntrackedFilesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1592658068100" />
+    <state x="168" y="94" key="MergeDialog" timestamp="1593265217191">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="168" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593265217191" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1592609362482">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1592609362482" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593226336400">
+    <state x="691" y="445" key="VCS.ChangelistChooser" timestamp="1593265212223">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593226336400" />
+    <state x="691" y="445" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593265212223" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593265326654">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593265326654" />
     <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
