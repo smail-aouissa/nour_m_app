@@ -17,7 +17,7 @@
             </div>
 
             <ul class="product-info">
-                <li><span>Disponibilité:</span> <a>en stock ({{stock || 1 }} produits)</a></li>
+                <li><span>Disponibilité:</span> <a>en stock </a></li>
                 <li>
                     <span>Type de produit:</span>
                     <a>{{ product.category ? product.category.label : '-' }}</a>
