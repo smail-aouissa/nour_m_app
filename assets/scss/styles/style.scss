@@ -2656,7 +2656,7 @@ All Products Area CSS
         img {
             width: 100%;
             height: 300px;
-            object-fit: cover;
+            object-fit: scale-down;
             
             &:nth-child(2) {
                 position: absolute;

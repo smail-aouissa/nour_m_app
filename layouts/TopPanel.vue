@@ -10,15 +10,14 @@
                                 :autoplay = true
                                 :autoplayTimeout = 1000
                                 :paginationEnabled = false
-                                :perPageCustom = "[[0, 1], [768, 1], [1024, 1]]"
-                            >
+                                :perPageCustom = "[[0, 1], [768, 1], [1024, 1]]">
                                 <slide v-for="item in items" :key="item.id">
                                     <div class="single-item-box">
                                         <p>
                                             {{item.text}}
-                                            <nuxt-link v-if="item.link" :to="item.link">
+                                            <a v-if="item.link" :href="getHashedLink(item.link)">
                                                 <strong class="underline font-sans text-uppercase">Voir plus!</strong>
-                                            </nuxt-link>
+                                            </a>
                                         </p>
                                     </div>
                                 </slide>
@@ -45,6 +44,20 @@ export default {
     methods: {
         emitToParent(){
             this.$emit('clicked', this.isShowing = !this.isShowing);
+        },
+        getHashedLink(url){
+            if(url.includes(window.location.hostname) && !url.includes('#')){
+                const protocol = location.protocol;
+                const slashes = protocol.concat("//");
+                let host = slashes.concat(window.location.hostname);
+                if(location.port)
+                    host = host.concat(':',location.port);
+
+                let extractedUrl = url.replace(host,'');
+                console.log(extractedUrl)
+                return host.concat('/#',extractedUrl)
+            }
+            return url
         }
     },
 }

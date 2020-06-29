@@ -44,4 +44,7 @@ export default {
         background-size: contain;
         background-repeat: no-repeat;
     }
+    .products-page-gallery .vueperslide, .products-page-gallery .vueperslide__image {
+        background-position: center center;
+    }
 </style>
