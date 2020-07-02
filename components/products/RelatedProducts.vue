@@ -12,8 +12,8 @@
                         :product="product"
                         :key="product.id"
                         @clicked="toggle(product)"
-                        :className="`col-lg-3 col-md-6 col-6`"
-                    ></ProductItem>
+                        :className="`col-lg-3 col-md-6 col-6`">
+                    </ProductItem>
                 </div>
             </div>
         </div>
