@@ -30,10 +30,13 @@ export default {
     },
     computed:{
         images(){
-            if(this.photo)
-                return [this.photo].concat(this.photos.map( p => p.full ))
-            else
-                return this.photos.map( p => p.full )
+            return this.photos.map( p => p.full )
+        }
+    },
+    watch:{
+        photo(newVal){
+            let index = this.photos.findIndex(p => p.full === newVal)
+            if(index > -1) this.$refs['slider'].goToSlide(index);
         }
     }
 }
