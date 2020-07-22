@@ -70,7 +70,7 @@
                 </h3>
 
                 <b-collapse :visible="!isMobile" id="collapse-6">
-                    <div v-if="colors.length" class="d-flex">
+                    <div v-if="colors.length" >
                         <div v-for="(color, key) in colors"
                              :key="key"
                              :class="{'active-color': includeColor(color)}"
@@ -237,6 +237,7 @@
         margin-top: 10px;
         border-radius: 50%;
         width: 25px;
+        display:inline-block;
         height: 25px;
         padding: 2px;
         margin-right: 5px;
