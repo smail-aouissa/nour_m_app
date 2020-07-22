@@ -58,11 +58,11 @@
                     <span @click="increaseQuantity()" class="plus-btn"><i class="fas fa-plus"></i></span>
                 </div>
 
-                <button v-if="getExistPId" :class="{'btn-disabled': stock === 0 }" type="submit" class="btn btn-danger" @click="addToCart()">
+                <button v-if="getExistPId" :class="{'btn-disabled': stock == 0 }" type="submit" class="btn btn-danger" @click="addToCart()">
                     <i class="fas fa-cart-plus"></i> Déja ajouté
                 </button>
 
-                <button v-else type="submit" :class="{'btn-disabled': stock === 0 }" class="btn btn-primary" @click="addToCart(product)">
+                <button v-else type="submit" :class="{'btn-disabled': stock == 0 }" class="btn btn-primary" @click="addToCart(product)">
                     <i class="fas fa-cart-plus"></i> Ajouter au panier
                 </button>
             </div>
@@ -116,7 +116,7 @@ export default {
                     icon: 'fas fa-exclamation-triangle'
                 });
                 return;
-            } else if (this.stock === 0){
+            } else if (this.stock == 0){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });

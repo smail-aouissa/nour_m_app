@@ -77,7 +77,7 @@
                                         <button
                                             type="submit"
                                             class="btn btn-primary"
-                                            :class="{'btn-disabled': stock === 0 }"
+                                            :class="{'btn-disabled': stock == 0 }"
                                             @click="addToCart(item)">
                                             <i class="fas fa-cart-plus"></i> Ajouter au panier
                                         </button>
@@ -120,7 +120,7 @@ export default {
                     icon: 'fas fa-exclamation-triangle'
                 });
                 return;
-            } else if (this.stock === 0){
+            } else if (this.stock == 0){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
@@ -219,7 +219,7 @@ export default {
         },
         stock(){
             if(this.selectedColor && this.selectedSize){
-                let variation = this.item.variations.find( i => i.color_product_id === this.selectedColor.id && i.product_size_id === this.selectedSize.id)
+                let variation = this.item.variations.find( i => i.color_product_id == this.selectedColor.id && i.product_size_id == this.selectedSize.id)
                 return variation ? variation.quantity : 0;
             }
             else{
