@@ -100,10 +100,8 @@ export default {
             return this.$store.getters.wishlist
         },
         stock(){
-            console.log(this.product.variations)
             if(this.selectedColor && this.selectedSize){
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
-                console.log(this.selectedVariation)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
             else{
