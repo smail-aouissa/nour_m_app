@@ -66,8 +66,8 @@ export default {
   axios: {
     //proxy: true,
     https: true,
-    //browserBaseURL: 'https://api.noor-m.com/api/'
-    browserBaseURL: 'https://nour.test/api/'
+    browserBaseURL: 'https://api.noor-m.com/api/'
+    //browserBaseURL: 'https://nour.test/api/'
   },
   generate: {
     routes: [
