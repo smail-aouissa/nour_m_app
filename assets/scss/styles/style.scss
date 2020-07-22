@@ -3674,8 +3674,6 @@ Products QuickView Modal Area CSS
                 }
 
                 .btn-disabled {
-                    pointer-events: none;
-                    cursor: not-allowed;
                     background-color: gray;
                 }
             }
@@ -7048,8 +7046,6 @@ Products Details Area CSS
         }
 
         .btn-disabled {
-            pointer-events: none;
-            cursor: not-allowed;
             background-color: gray;
         }
     }

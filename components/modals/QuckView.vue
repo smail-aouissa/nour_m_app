@@ -115,6 +115,18 @@ export default {
             mutations.toggleQuickView();
         },
         addToCart(item){
+            if(!this.selectedColor && !this.selectedSize){
+                this.$toast.error("Vous devez d'abord sélectionner la taille et la couleur",{
+                    icon: 'fas fa-exclamation-triangle'
+                });
+                return;
+            } else if (this.stock === 0){
+                this.$toast.error("Rupture de stock",{
+                    icon: 'fas fa-exclamation-triangle'
+                });
+                return;
+            }
+
             const product = [{
                 id: item.id,
                 label: item.label,

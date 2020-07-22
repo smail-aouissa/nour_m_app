@@ -87,7 +87,8 @@ export default {
             getExistPId: false,
             quantity: 1,
             selectedColor: null,
-            selectedSize: null
+            selectedSize: null,
+            selectedVariation: null
         }
     },
     props: ['product'],
@@ -99,9 +100,11 @@ export default {
             return this.$store.getters.wishlist
         },
         stock(){
+            console.log(this.product.variations)
             if(this.selectedColor && this.selectedSize){
-                let variation = this.product.variations.find( p => p.color_product_id === this.selectedColor.id && p.product_size_id === this.selectedSize.id)
-                return variation ? variation.quantity : 0;
+                this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
+                console.log(this.selectedVariation)
+                return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
             else{
                 return 0;
@@ -110,6 +113,18 @@ export default {
     },
     methods: {
         addToCart(){
+            if(!this.selectedColor && !this.selectedSize){
+                this.$toast.error("Vous devez d'abord sélectionner la taille et la couleur",{
+                    icon: 'fas fa-exclamation-triangle'
+                });
+                return;
+            } else if (this.stock === 0){
+                this.$toast.error("Rupture de stock",{
+                    icon: 'fas fa-exclamation-triangle'
+                });
+                return;
+            }
+
             const product = [{
                 id: this.product.id,
                 label: this.product.label,
@@ -209,7 +224,8 @@ export default {
                 image: this.getImage(this.product.photos),
                 quantity: this.quantity,
                 color: this.selectedColor,
-                size: this.selectedSize
+                size: this.selectedSize,
+                variation: this.selectedVariation,
             }]
             this.$store.dispatch('setProduct', product)
             this.$router.push('/checkout?product='+this.product.id)

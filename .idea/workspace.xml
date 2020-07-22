@@ -28,59 +28,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/200.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/200.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/133c2b667f8e20357f3d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/2c05296b1c791196e139.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/394dd9fc7c8fedc5f991.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/6cbbe73e5de71deb2fea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/80cd28288dd399f6c1e1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/84115fb4353914198afa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/97dbec205d5e32e87908.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/LICENSES" beforeDir="false" afterPath="$PROJECT_DIR$/dist/_nuxt/LICENSES" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/b9e281adcf0c38ea4476.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/d82d1a16aaf9bec435da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/f350ac97e50e30a36c92.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/f66303e368e5c5d082ac.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/f85a3a6a44666d78ba51.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fe409b7d61b6e9fbdbc6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/feef0cd6f6f4539714bf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/2ef8ba3.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/418dad8.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/427d721.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/46e7cec.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/5e2f921.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/65b9977.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/98b6db5.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/a714014.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/a7b95db.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/dcce4b7.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/e6257a7.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/fonts/ff8d9f8.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/04ced86.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/0950cf6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/2d64558.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/2e4d07b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/2fac6f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/3b3c1bb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/3f45b45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/4031654.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/4b32e6d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/8ea774c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/aa9d50d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/b4359c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/b75c200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/c91cfae.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/d1e9eb0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/d88736c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/d8f9a11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/d99e314.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/daad579.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/e124333.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/f4ac471.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/f8f20a3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/_nuxt/img/fdef4ee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/styles/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/Details.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +98,7 @@
       <workItem from="1593088711336" duration="1927000" />
       <workItem from="1593221626365" duration="5787000" />
       <workItem from="1593711567256" duration="3128000" />
-      <workItem from="1595286918781" duration="6182000" />
+      <workItem from="1595286918781" duration="8811000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1592707362320</created>
@@ -381,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595380219383</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="wip">
+      <created>1595381798604</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1595381798604</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,10 +375,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593712862471" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1595380219191">
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1595381797679">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595380219191" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595381797679" />
     <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -450,10 +407,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="691" y="445" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593265212223" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593715157259">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595381799923">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593715157259" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595381799923" />
     <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
