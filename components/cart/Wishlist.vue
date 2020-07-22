@@ -74,7 +74,8 @@ export default {
             this.$store.dispatch('deleteWishlist', id)
         },
         getImage(photos){
-            return Array.isArray(photos) && photos.hasOwnProperty(0) ? photos[0].thumb : null;
+            console.log(photos)
+            return Array.isArray(photos) && photos.hasOwnProperty(0) ? (photos[0].thumb || photos[0].full) : null;
         }
     },
 }

@@ -37,7 +37,7 @@
                                     </div>
 
                                     <ul class="product-info">
-                                        <li><span>Disponibilité:</span> <a>en stock ({{ stock || 1 }} produits)</a></li>
+                                        <li><span>Disponibilité:</span> <a>en stock ( {{ stock || 0 }} produits )</a></li>
                                         <li><span>Type de produit:</span> <a>{{ item.category ? item.category.label : '-' }}</a></li>
                                     </ul>
 
@@ -70,15 +70,15 @@
                                     <div class="product-add-to-cart">
                                         <div class="input-counter">
                                             <span @click="decreaseQuantity()" class="minus-btn"><i class="fas fa-minus"></i></span>
-                                                {{quantity}}
+                                                {{ quantity }}
                                             <span @click="increaseQuantity()" class="plus-btn"><i class="fas fa-plus"></i></span>
                                         </div>
 
-                                        <button 
-                                            type="submit" 
+                                        <button
+                                            type="submit"
                                             class="btn btn-primary"
-                                            @click="addToCart(item)"
-                                        >
+                                            :class="{'btn-disabled': stock === 0 }"
+                                            @click="addToCart(item)">
                                             <i class="fas fa-cart-plus"></i> Ajouter au panier
                                         </button>
                                     </div>
@@ -102,7 +102,6 @@ export default {
     data() {
         return{
             quantity: 1,
-            stock: 1,
             selectedColor: null,
             selectedSize: null,
             product: null,
@@ -110,7 +109,7 @@ export default {
     },
     methods: {
         closeQuickView(){
-            this.quantity= 1;
+            this.quantity = 1;
             this.selectedColor= null;
             this.selectedSize= null;
             mutations.toggleQuickView();
@@ -123,7 +122,9 @@ export default {
                 image: this.getImage(item.photos),
                 quantity: this.quantity,
                 color: this.selectedColor,
-                size: this.selectedSize
+                size: this.selectedSize,
+                category: item.category,
+                stock: this.stock,
             }]
 
             if(this.cart.length > 0){
@@ -153,8 +154,13 @@ export default {
             this.closeQuickView()
         },
         increaseQuantity(){
-            if(this.quantity >= this.stock){
-                this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.item.stock,{
+            if(this.stock === 0){
+                this.$toast.error("Rupture de stock",{
+                    icon: 'fas fa-cart-plus'
+                });
+            }
+            else if(this.quantity >= this.stock){
+                this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.stock,{
                     icon: 'fas fa-cart-plus'
                 });
             } else {
@@ -175,11 +181,11 @@ export default {
         },
         selectSize(size){
             this.selectedSize = size;
-            if(size.quantity) this.stock = size.quantity;
+            //if(size.quantity) this.stock = size.quantity;
         },
         selectColor(color){
             this.selectedColor = color;
-            if(color.quantity) this.stock = color.quantity;
+            //if(color.quantity) this.stock = color.quantity;
         },
         showProduct(){
             this.closeQuickView();
@@ -194,10 +200,19 @@ export default {
             return this.$store.getters.cart
         },
         item(){
-            if(store.item?.colors){
+            /*if(store.item?.colors){
                 this.stock = store.item.colors.reduce((a,b) => a + (b.quantity || 0) , 0) ;
-            }
+            }*/
             return store.item;
+        },
+        stock(){
+            if(this.selectedColor && this.selectedSize){
+                let variation = this.item.variations.find( i => i.color_product_id === this.selectedColor.id && i.product_size_id === this.selectedSize.id)
+                return variation ? variation.quantity : 0;
+            }
+            else{
+                return 0;
+            }
         }
     }
 }

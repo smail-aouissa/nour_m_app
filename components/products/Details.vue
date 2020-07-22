@@ -17,7 +17,11 @@
             </div>
 
             <ul class="product-info">
-                <li><span>Disponibilité:</span> <a>en stock </a></li>
+                <li>
+                    <span>Disponibilité:</span>
+                    <a v-if="stock">en stock ( {{ stock }} produits )</a>
+                    <a v-else>Veuillez sélectionner la taille et la couleur</a>
+                </li>
                 <li>
                     <span>Type de produit:</span>
                     <a>{{ product.category ? product.category.label : '-' }}</a>
@@ -54,11 +58,11 @@
                     <span @click="increaseQuantity()" class="plus-btn"><i class="fas fa-plus"></i></span>
                 </div>
 
-                <button v-if="getExistPId" type="submit" class="btn btn-danger" @click="addToCart()">
+                <button v-if="getExistPId" :class="{'btn-disabled': stock === 0 }" type="submit" class="btn btn-danger" @click="addToCart()">
                     <i class="fas fa-cart-plus"></i> Déja ajouté
                 </button>
 
-                <button v-else type="submit" class="btn btn-primary" @click="addToCart(product)">
+                <button v-else type="submit" :class="{'btn-disabled': stock === 0 }" class="btn btn-primary" @click="addToCart(product)">
                     <i class="fas fa-cart-plus"></i> Ajouter au panier
                 </button>
             </div>
@@ -81,7 +85,6 @@ export default {
     data(){
         return {
             getExistPId: false,
-            stock: 1,
             quantity: 1,
             selectedColor: null,
             selectedSize: null
@@ -95,6 +98,15 @@ export default {
         wishlist(){
             return this.$store.getters.wishlist
         },
+        stock(){
+            if(this.selectedColor && this.selectedSize){
+                let variation = this.product.variations.find( p => p.color_product_id === this.selectedColor.id && p.product_size_id === this.selectedSize.id)
+                return variation ? variation.quantity : 0;
+            }
+            else{
+                return 0;
+            }
+        }
     },
     methods: {
         addToCart(){
@@ -105,7 +117,9 @@ export default {
                 image: this.getImage(this.product.photos),
                 quantity: this.quantity,
                 color: this.selectedColor,
-                size: this.selectedSize
+                size: this.selectedSize,
+                category: this.product.category,
+                stock: this.stock,
             }]
 
             if(this.cart && this.cart.length > 0){
@@ -145,8 +159,14 @@ export default {
 
         },
         increaseQuantity(){
-            if(this.quantity > this.product.stock){
-                this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.item.stock,{
+            console.log(this.quantity)
+            if(this.stock === 0){
+                this.$toast.error("Rupture de stock",{
+                    icon: 'fas fa-cart-plus'
+                });
+            }
+            else if(this.quantity >= this.stock){
+                this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.stock,{
                     icon: 'fas fa-cart-plus'
                 });
             } else {
@@ -167,14 +187,21 @@ export default {
         },
         selectSize(size){
             this.selectedSize = size;
-            if(size.quantity) this.stock = size.quantity;
+            //if(size.quantity) this.stock = size.quantity;
         },
         selectColor(color){
             this.selectedColor = color;
-            if(color.quantity) this.stock = color.quantity;
+            //if(color.quantity) this.stock = color.quantity;
             if(color.photo) this.$emit('changed-photo',color.photo)
         },
         buyProduct(){
+            if( this.stock === 0 ){
+                this.$toast.error("Veuillez sélectionner la taille et la couleur!",{
+                    icon: 'fas fa-cart-plus'
+                });
+                return;
+            }
+
             const product = [{
                 id: this.product.id,
                 label: this.product.label,

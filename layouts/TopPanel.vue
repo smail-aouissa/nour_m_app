@@ -54,7 +54,7 @@ export default {
                     host = host.concat(':',location.port);
 
                 let extractedUrl = url.replace(host,'');
-                console.log(extractedUrl)
+
                 return host.concat('/#',extractedUrl)
             }
             return url

@@ -28,9 +28,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/products/ProductImages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/ProductImages.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/product/_id.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/styles/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CartItems.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartItems.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/Wishlist.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/Wishlist.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/products/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/Details.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/TopPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/TopPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/category" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
@@ -97,7 +101,8 @@
       <workItem from="1592864136553" duration="47271000" />
       <workItem from="1593088711336" duration="1927000" />
       <workItem from="1593221626365" duration="5787000" />
-      <workItem from="1593711567256" duration="2447000" />
+      <workItem from="1593711567256" duration="3128000" />
+      <workItem from="1595286918781" duration="5577000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1592707362320</created>
@@ -309,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593712614933</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="wip">
+      <created>1593714467507</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1593714467507</updated>
+    </task>
+    <task id="LOCAL-00032" summary="wip">
+      <created>1593715156023</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1593715156023</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,10 +365,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593712862471" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593712614037">
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1593715155897">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593712614037" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593715155897" />
     <state x="492" y="310" key="EditFileWatcherDialog" timestamp="1592593592692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -378,10 +397,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="691" y="445" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593265212223" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593712617049">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1593715157259">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593712617049" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593715157259" />
     <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

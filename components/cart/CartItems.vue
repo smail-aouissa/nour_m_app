@@ -112,6 +112,15 @@ export default {
             this.$store.dispatch('deleteCart', id)
         },
         onIncrement(id){
+            let item = this.cart.find( c => c.id === id);
+
+            if(item && item.quantity + 1 > item.stock){
+                this.$toast.error("Vous ne pouvez pas ajouter plus de " + item.stock,{
+                    icon: 'fas fa-cart-plus'
+                });
+                return;
+            }
+
             this.$store.dispatch('updateCart', {
                 id,
                 unit: 1,
