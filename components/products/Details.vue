@@ -4,7 +4,13 @@
             <h3>{{product.label}}</h3>
 
             <div class="price">
-                <span class="new-price">{{product.price - (product.offerPrice || 0 )}}
+                <span class="new-price">
+                    <span class="old-price" v-if="product.offerPrice >0">
+                        {{product.price}}
+                        <span class="new-price">{{product.offerPrice}}</span>
+                    </span>
+                    <span v-else >{{product.price}}</span> 
+                    
                     <span style="font-size: 12px"> DZD</span>
                 </span>
             </div>
@@ -126,11 +132,15 @@ export default {
                 });
                 return;
             }
-
+            if(this.product.offerPrice >0){
+                var price=this.product.offerPrice;
+            }else{
+                var price=this.product.price;
+            }
             const product = [{
                 id: this.product.id,
                 label: this.product.label,
-                price: this.product.price,
+                price: price,
                 image: this.getImage(this.product.photos),
                 quantity: this.quantity,
                 color: this.selectedColor,

@@ -2766,6 +2766,7 @@ All Products Area CSS
             span {
                 font-size: 16px;
                 display: inline-block;
+                color:#212529
             }
             .old-price {
                 color: #858585;
@@ -6088,6 +6089,7 @@ Woocommerce Sidebar Area CSS
                     span {
                         font-size: 17px;
                         display: inline-block;
+                        color:#212529;
                     }
                     .old-price {
                         color: #858585;
@@ -6943,7 +6945,7 @@ Products Details Area CSS
             color: $paragraph-color;
             margin-bottom: 8px;
         }
-        
+
         ul {
             list-style-type: none;
             margin: {
@@ -7050,6 +7052,7 @@ Products Details Area CSS
 
         .btn-disabled {
             background-color: gray;
+            cursor: no-drop;
         }
     }
     .product-info-btn {

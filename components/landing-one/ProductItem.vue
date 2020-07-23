@@ -38,14 +38,14 @@
                     <nuxt-link :to="`/product/${product.id}`">{{product.label}}</nuxt-link>
                 </h3>
 
+
                 <div class="product-price">
-                    <span
-                        class="old-price"
-                        v-if="product.offerPrice"
-                    >
-                        {{product.price - (product.offerPrice || 0) }} <span style="font-size: 10px">DZD</span>
+                    <span class="old-price" v-if="product.promo_price >0">
+                        {{product.price}}
+                        <span class="new-price">{{product.promo_price}}</span>
                     </span>
-                    <span class="new-price">{{product.price}} <span style="font-size: 12px">DZD</span></span>
+                    <span v-else class="product-price" >{{product.price}}</span> 
+                    <span style="font-size: 12px"> DZD</span>
                 </div>
 
                 <div class="rating">
@@ -94,10 +94,15 @@ export default {
             this.$emit('clicked')
         },
         addToCart(item){
+            if(item.promo_price >0){
+                var price=item.promo_price;
+            }else{
+                var price=item.price;
+            }
             const product = [{
                 id: item.id,
                 label: item.label,
-                price: item.price - ( item.offerPrice || 0 ),
+                price:price,
                 image: this.getImage(item.photos),
                 quantity: 1,
                 color: null,

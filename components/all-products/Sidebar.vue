@@ -103,13 +103,16 @@
                             <nuxt-link :to="`/product/${product.id}`">{{product.label}}</nuxt-link>
                         </h3>
 
+
                         <div class="product-price">
-                            <span class="new-price">{{product.price - product.offerPrice}}
-                                <span style="font-size: 12px">DZD</span>
+                            <span class="old-price" v-if="product.promo_price >0">
+                                {{product.price}}
+                                <span class="new-price">{{product.promo_price}}</span>
                             </span>
-                            <span v-if="product.offerPrice" class="old-price">{{product.price}}
-                                <span style="font-size: 10px">DZD</span>
-                            </span>
+                            <span v-else class="product-price" >{{product.price}}</span> 
+                            <span style="font-size: 12px"> DZD</span>
+
+                            
                         </div>
                     </div>
                 </div>
