@@ -6834,7 +6834,7 @@ Products Details Area CSS
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
-
+                    cursor: pointer;
                     span {
                         position: absolute;
                         z-index: 100;
@@ -6967,6 +6967,8 @@ Products Details Area CSS
                     border: 1px solid #eeeeee;
                     color: #858585;
                     text-align: center;
+                    cursor: pointer;
+                    user-select: none;
 
                     &:hover, &:focus {
                         border-color: $black-color;

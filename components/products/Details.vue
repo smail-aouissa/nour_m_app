@@ -19,7 +19,11 @@
             <ul class="product-info">
                 <li>
                     <span>Disponibilité:</span>
-                    <a v-if="stock">en stock ( {{ stock }} produits )</a>
+                    <a v-if="stock">
+                        <span v-if="stock >=1 " style="color:green">en stock</span>
+                        <span v-if="stock <1 " style="color:red">en rupture</span>
+                        <!-- en stock ( {{ stock }} produits ) -->
+                    </a>
                     <a v-else>Veuillez sélectionner la taille et la couleur</a>
                 </li>
                 <li>
