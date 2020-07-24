@@ -30,7 +30,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/modals/QuckView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/QuckView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/products/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/products/Details.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <workItem from="1593088711336" duration="1927000" />
       <workItem from="1593221626365" duration="5787000" />
       <workItem from="1593711567256" duration="3128000" />
-      <workItem from="1595286918781" duration="14874000" />
+      <workItem from="1595286918781" duration="15272000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1592707362320</created>
@@ -366,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595462392636</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="wip">
+      <created>1595551261986</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1595551261986</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,10 +409,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593712862471" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1595462392492">
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1595551261488">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595462392492" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595551261488" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1595550014279">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -439,10 +445,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="691" y="445" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593265212223" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595462394100">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595551263318">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595462394100" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595551263318" />
     <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

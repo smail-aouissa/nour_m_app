@@ -121,7 +121,7 @@ export default {
                 });
                 return;
             }
-            else if (this.selectedColor && this.selectedSize && this.cantBuy){
+            else if (this.cantBuy){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
