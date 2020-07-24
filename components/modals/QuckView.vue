@@ -77,7 +77,7 @@
                                         <button
                                             type="submit"
                                             class="btn btn-primary"
-                                            :class="{'btn-disabled': stock == 0 }"
+                                            :class="{'btn-disabled': cantBuy  }"
                                             @click="addToCart(item)">
                                             <i class="fas fa-cart-plus"></i> Ajouter au panier
                                         </button>
@@ -115,12 +115,13 @@ export default {
             mutations.toggleQuickView();
         },
         addToCart(item){
-            if(!this.selectedColor && !this.selectedSize){
+            if(!this.selectedColor && !this.selectedSize && this.cantBuy){
                 this.$toast.error("Vous devez d'abord sélectionner la taille et la couleur",{
                     icon: 'fas fa-exclamation-triangle'
                 });
                 return;
-            } else if (this.stock == 0){
+            }
+            else if (this.selectedColor && this.selectedSize && this.cantBuy){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
@@ -225,6 +226,9 @@ export default {
             else{
                 return 0;
             }
+        },
+        cantBuy(){
+            return this.stock === 0 && this.item.sizes && this.item.sizes.length > 0 && this.item.colors && this.item.colors.length > 0;
         }
     }
 }

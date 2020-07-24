@@ -68,11 +68,18 @@
                     <span @click="increaseQuantity()" class="plus-btn"><i class="fas fa-plus"></i></span>
                 </div>
 
-                <button v-if="getExistPId" :class="{'btn-disabled': stock == 0 }" type="submit" class="btn btn-danger" @click="addToCart()">
+                <button v-if="getExistPId"
+                        :class="{'btn-disabled': cantBuy  }"
+                        type="submit"
+                        class="btn btn-danger"
+                        @click="addToCart()">
                     <i class="fas fa-cart-plus"></i> Déja ajouté
                 </button>
 
-                <button v-else type="submit" :class="{'btn-disabled': stock == 0 }" class="btn btn-primary" @click="addToCart(product)">
+                <button v-else type="submit"
+                        :class="{'btn-disabled': cantBuy }"
+                        class="btn btn-primary"
+                        @click="addToCart(product)">
                     <i class="fas fa-cart-plus"></i> Ajouter au panier
                 </button>
             </div>
@@ -114,24 +121,33 @@ export default {
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
+            else if(!this.selectedColor && !this.selectedSize && this.product.variations && !this.product.variations[0].color_product_id && !this.product.variations[0].product_size_id  ){
+                this.selectedVariation = this.product.variations[0];
+                return this.selectedVariation ? this.selectedVariation.quantity : 0;
+            }
             else{
                 return 0;
             }
+        },
+        cantBuy(){
+            return this.stock === 0 && this.product.sizes && this.product.sizes.length > 0 && this.product.colors && this.product.colors.length > 0;
         }
     },
     methods: {
         addToCart(){
-            if(!this.selectedColor && !this.selectedSize){
+            if(!this.selectedColor && !this.selectedSize && this.cantBuy){
                 this.$toast.error("Vous devez d'abord sélectionner la taille et la couleur",{
                     icon: 'fas fa-exclamation-triangle'
                 });
                 return;
-            } else if (this.stock == 0){
+            }
+            else if (this.selectedColor && this.selectedSize && this.cantBuy){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
                 return;
             }
+
             if(this.product.offerPrice >0){
                 var price=this.product.offerPrice;
             }else{
@@ -186,7 +202,6 @@ export default {
 
         },
         increaseQuantity(){
-            console.log(this.quantity)
             if(this.stock === 0){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-cart-plus'
@@ -222,7 +237,7 @@ export default {
             if(color.photo) this.$emit('changed-photo',color.photo)
         },
         buyProduct(){
-            if( this.stock === 0 ){
+            if( this.cantBuy ){
                 this.$toast.error("Veuillez sélectionner la taille et la couleur!",{
                     icon: 'fas fa-cart-plus'
                 });
