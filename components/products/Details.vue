@@ -26,8 +26,8 @@
                 <li>
                     <span>Disponibilité:</span>
                     <a v-if="stock">
-                        <span v-if="stock >=1 " style="color:green">en stock</span>
-                        <span v-if="stock <1 " style="color:red">en rupture</span>
+                        <span v-if="(+ stock) >=1 " style="color:green">en stock</span>
+                        <span v-if="(+ stock) <1 " style="color:red">en rupture</span>
                         <!-- en stock ( {{ stock }} produits ) -->
                     </a>
                     <a v-else>Veuillez sélectionner la taille et la couleur</a>
@@ -119,6 +119,14 @@ export default {
         stock(){
             if(this.selectedColor && this.selectedSize){
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
+                return this.selectedVariation ? this.selectedVariation.quantity : 0;
+            }
+            else if(this.selectedColor){
+                this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id)
+                return this.selectedVariation ? this.selectedVariation.quantity : 0;
+            }
+            else if(this.selectedSize){
+                this.selectedVariation = this.product.variations.find( p => p.product_size_id == this.selectedSize.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
             else if(!this.selectedColor && !this.selectedSize && this.product.variations && !this.product.variations[0]?.color_product_id && !this.product.variations[0]?.product_size_id  ){
