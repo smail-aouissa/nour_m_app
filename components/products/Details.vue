@@ -121,7 +121,7 @@ export default {
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
-            else if(!this.selectedColor && !this.selectedSize && this.product.variations && !this.product.variations[0].color_product_id && !this.product.variations[0].product_size_id  ){
+            else if(!this.selectedColor && !this.selectedSize && this.product.variations && !this.product.variations[0]?.color_product_id && !this.product.variations[0]?.product_size_id  ){
                 this.selectedVariation = this.product.variations[0];
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
