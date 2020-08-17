@@ -19,8 +19,8 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="contact-info">
                             <h3 style="font-size: 22px">Qui est Nour</h3>
-                            <p style="font-size: 18px">Fondatrice d’ une ligne de vêtement pour femmes «  NOOR M PRO » influenceuse avec plus d’un million d’abonnés sur son compte instagram
-                                La marque noor m aspirent à revitaliser le style de la femmes moderne algériennes </p>
+                            <p style="font-size: 18px">Fondatrice d’ une ligne de vêtements pour femmes « <strong>NOOR M PRO</strong> » influenceuse avec plus d’un million d’abonnés sur son compte instagram ,
+                         La marque Noor M aspirent à revitaliser le style de la Femme moderne Algérienne.</p>
                         </div>
                         <div class="contact-info mt-5">
                             <h3 style="font-size: 22px">Suivez-moi</h3>
