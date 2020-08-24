@@ -51,8 +51,15 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-facebook-pixel-module',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
   ],
+
+  facebook: {
+    track: 'PageView',
+    pixelId: '310161840313106',
+    disabled: false
+  },
   /*
   /*
   ** Global CSS
