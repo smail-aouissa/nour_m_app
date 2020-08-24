@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="">
+    <list default="true" id="6b4aea47-6819-482d-b475-6d4ac17a7efe" name="Default Changelist" comment="wip">
+      <change afterPath="$PROJECT_DIR$/static/pixel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/product/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <workItem from="1593711567256" duration="3128000" />
       <workItem from="1595286918781" duration="15594000" />
       <workItem from="1596632796153" duration="3081000" />
-      <workItem from="1598227168704" duration="522000" />
+      <workItem from="1598227168704" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1592707362320</created>
@@ -423,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596639630986</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="wip">
+      <created>1598227927496</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1598227927496</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,10 +468,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593712862471" />
-    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1596639630098">
+    <state x="426" y="118" key="CommitChangelistDialog2" timestamp="1598228719742">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1596639630098" />
+    <state x="426" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1598228719742" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1595550014279">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -496,10 +504,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="691" y="445" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593265212223" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1596639632657">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1598227930192">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1596639632657" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1598227930192" />
     <state x="538" y="280" width="604" height="548" key="find.popup" timestamp="1593213462009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
