@@ -206,9 +206,6 @@ export default {
             return this.$store.getters.totalAmount || 0;
         },
         cartTotal(){
-            console.log(this.$store.getters.totalAmount);
-            console.log(this.personDetails.province ? (this.personDetails.province.price || 0) : 0);
-            console.log((this.$store.getters.totalAmount) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0));
             return (this.$store.getters.totalAmount) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0);
         }
     },
