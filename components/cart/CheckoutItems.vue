@@ -206,7 +206,7 @@ export default {
             return this.$store.getters.totalAmount || 0;
         },
         cartTotal(){
-            return (this.$store.getters.totalAmount) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0);
+            return ((Number(this.$store.getters.totalAmount)) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0));
         }
     },
     mounted() {
@@ -220,6 +220,7 @@ export default {
             }).catch(error => {
                 console.log(error)
             })
+            
         },
         loadTowns(){
             if(this.personDetails.province)
