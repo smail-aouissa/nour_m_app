@@ -8,11 +8,11 @@ export default {
     htmlAttrs: {
       lang: 'fr',
     },
-    title: 'Nour-M Boutique',
+    title: 'Noor-M Boutique',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {hid: 'description', name: 'description', content: 'Fondatrice d’ une ligne de vêtements pour femmes « NOOR M PRO » influenceuse avec plus d’un million d’abonnés sur son compte instagram ,La marque Noor M aspirent à revitaliser le style de la Femme moderne Algérienne' }
     ],
     script: [
       { src: '/pixel.js', type: 'text/javascript' }

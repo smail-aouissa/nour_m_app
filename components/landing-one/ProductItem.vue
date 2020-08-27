@@ -52,7 +52,7 @@
                     <i v-for="n in Math.floor(product.rating || 5)" class="fas fa-star"></i>
                 </div>
 
-                <a
+                <!-- <a
                     v-if="getExistPId === product.id"
                     href="javascript:void(0)"
                     class="btn btn-light added-btn"
@@ -66,7 +66,17 @@
                     class="btn btn-light"
                     @click="addToCart(product)">
                     Ajouter au panier
-                </a>
+                </a> -->
+                <nuxt-link  :to="`/product/${product.id}`">
+                    <a
+                        
+                        href="javascript:void(0)"
+                        class="btn btn-light"
+                        >
+                        Voir le produit
+                    </a>
+                </nuxt-link>
+
             </div>
         </div>
     </div>

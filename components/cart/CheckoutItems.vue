@@ -170,7 +170,7 @@
                                     </p>
                                 </div>
 
-                                <a href="javascript:void(0)" @click="add" class="btn btn-primary order-btn">Passer la commande</a>
+                                <a href="javascript:void(0)" @click="add" :class="{'btn-disabled': ordered  }" class="btn btn-primary order-btn">Passer la commande</a>
                             </div>
                         </div>
                     </div>
@@ -195,6 +195,7 @@ export default {
             },
             provinces: [],
             towns: [],
+            ordered:false,
         }
     },
     computed: {
@@ -205,11 +206,15 @@ export default {
             return this.$store.getters.totalAmount || 0;
         },
         cartTotal(){
-            return this.$store.getters.totalAmount + (this.personDetails.province?.price || 0.00);
+            console.log(this.$store.getters.totalAmount);
+            console.log(this.personDetails.province ? (this.personDetails.province.price || 0) : 0);
+            console.log((this.$store.getters.totalAmount) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0));
+            return (this.$store.getters.totalAmount) + (this.personDetails.province ? (this.personDetails.province.price || 0) : 0);
         }
     },
     mounted() {
-        this.loadProvinces()
+        this.loadProvinces();
+        
     },
     methods: {
         loadProvinces(){
@@ -253,6 +258,14 @@ export default {
         },
 
         passOrder(data){
+            if(this.ordered==true){
+                return;
+            }
+            if(this.cart.length<1){
+                this.$toast.error(`votre panier est vide.`);
+                return;
+            }
+            this.ordered=true;
             this.$axios.$post('/order', data).then(response => {
                 this.$toast.success(`Votre commande a été envoyée avec succés.`, {
                     icon: 'fas fa-cart-plus'

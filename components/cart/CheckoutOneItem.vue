@@ -197,6 +197,8 @@ export default {
             },
             provinces: [],
             towns: [],
+                        ordered:false,
+
         }
     },
     computed:{
@@ -249,6 +251,15 @@ export default {
         },
 
         passOrder(data){
+            if(!this.product){
+                this.$toast.error(`pas de produit séléctioné.`);
+               return;
+            }
+            if(this.ordered==true){
+                return;
+            }
+            
+            this.ordered=true;
             this.$axios.$post('/order', data).then(response => {
                 this.$toast.success(`Votre commande a été envoyée avec succés.`, {
                     icon: 'fas fa-cart-plus'

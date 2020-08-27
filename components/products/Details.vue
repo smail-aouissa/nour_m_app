@@ -138,16 +138,40 @@ export default {
             }
         },
         cantBuy(){
-            return this.stock === 0 && this.product.sizes && this.product.sizes.length > 0 && this.product.colors && this.product.colors.length > 0;
+            return this.stock === 0 || (this.product.sizes && this.product.sizes.length > 0 && !this.selectedSize) || (this.product.colors && this.product.colors.length >0 && !this.selectedColor);
+            // return this.stock === 0 && this.product.sizes && this.product.sizes.length > 0 && this.product.colors && this.product.colors.length > 0;
         }
     },
     methods: {
-        addToCart(){
-            if(!this.selectedColor && !this.selectedSize && this.cantBuy){
-                this.$toast.error("Vous devez d'abord sélectionner la taille et la couleur",{
+        size_is_selected(){
+           
+            if(this.product.sizes && this.product.sizes.length > 0 && !this.selectedSize){
+           
+
+                this.$toast.error("Vous devez d'abord sélectionner la taille ",{
                     icon: 'fas fa-exclamation-triangle'
                 });
-                return;
+                return false;
+            }
+            return true;
+
+        },
+        color_is_selected(){
+            
+            if (this.product.colors && this.product.colors.length >0 && !this.selectedColor){
+           
+                this.$toast.error("Vous devez d'abord sélectionner la couleur",{
+                    icon: 'fas fa-exclamation-triangle'
+                });
+                return false;
+
+            }
+            return true;
+
+        },
+        addToCart(){
+            if(!this.color_is_selected() || !this.size_is_selected()){
+                return
             }
             else if (this.cantBuy){
                 this.$toast.error("Rupture de stock",{
@@ -171,6 +195,7 @@ export default {
                 size: this.selectedSize,
                 category: this.product.category,
                 stock: this.stock,
+                variation: this.selectedVariation,
             }]
 
             if(this.cart && this.cart.length > 0){
@@ -210,13 +235,16 @@ export default {
 
         },
         increaseQuantity(){
+            if(!this.color_is_selected() || !this.size_is_selected()){
+                return
+            }
             if(this.stock === 0){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-cart-plus'
                 });
             }
-            else if(this.quantity >= this.stock){
-                this.$toast.error("Vous ne pouvez pas ajouter plus de " + this.stock,{
+            else if((this.quantity >= this.stock) || (this.quantity>4)){
+                this.$toast.error("Vous ne pouvez pas ajouter plus de produit",{
                     icon: 'fas fa-cart-plus'
                 });
             } else {
@@ -237,17 +265,22 @@ export default {
         },
         selectSize(size){
             this.selectedSize = size;
+            this.quantity=1;
             //if(size.quantity) this.stock = size.quantity;
         },
         selectColor(color){
             this.selectedColor = color;
+            this.quantity=1;
             //if(color.quantity) this.stock = color.quantity;
             if(color.photo) this.$emit('changed-photo',color.photo)
         },
         buyProduct(){
-            if( this.cantBuy ){
-                this.$toast.error("Veuillez sélectionner la taille et la couleur!",{
-                    icon: 'fas fa-cart-plus'
+            if(!this.color_is_selected() || !this.size_is_selected()){
+                return
+            }
+            else if (this.cantBuy){
+                this.$toast.error("Rupture de stock",{
+                    icon: 'fas fa-exclamation-triangle'
                 });
                 return;
             }

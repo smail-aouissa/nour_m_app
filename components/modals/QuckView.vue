@@ -68,7 +68,7 @@
                                     <div v-else style="height: 60px"></div>
 
                                     <div class="product-add-to-cart">
-                                        <div class="input-counter">
+                                        <!-- <div class="input-counter">
                                             <span @click="decreaseQuantity()" class="minus-btn"><i class="fas fa-minus"></i></span>
                                                 {{ quantity }}
                                             <span @click="increaseQuantity()" class="plus-btn"><i class="fas fa-plus"></i></span>
@@ -80,7 +80,7 @@
                                             :class="{'btn-disabled': cantBuy  }"
                                             @click="addToCart(item)">
                                             <i class="fas fa-cart-plus"></i> Ajouter au panier
-                                        </button>
+                                        </button> -->
                                     </div>
 
                                     <a href="javascript:void(0)" @click="showProduct" class="view-full-info">Afficher toutes les informations</a>
@@ -218,15 +218,15 @@ export default {
             }*/
             return store.item;
         },
-        stock(){
-            if(this.selectedColor && this.selectedSize){
-                let variation = this.item.variations.find( i => i.color_product_id == this.selectedColor.id && i.product_size_id == this.selectedSize.id)
-                return variation ? variation.quantity : 0;
-            }
-            else{
-                return 0;
-            }
-        },
+        // stock(){
+        //     if(this.selectedColor && this.selectedSize){
+        //         let variation = this.item.variations.find( i => i.color_product_id == this.selectedColor.id && i.product_size_id == this.selectedSize.id)
+        //         return variation ? variation.quantity : 0;
+        //     }
+        //     else{
+        //         return 0;
+        //     }
+        // },
         cantBuy(){
             return this.stock === 0 && this.item.sizes && this.item.sizes.length > 0 && this.item.colors && this.item.colors.length > 0;
         }
