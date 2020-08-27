@@ -121,11 +121,11 @@ export default {
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id && p.product_size_id == this.selectedSize.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
-            else if(this.selectedColor){
+            else if(this.selectedColor && this.color_is_selected ){
                 this.selectedVariation = this.product.variations.find( p => p.color_product_id == this.selectedColor.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
-            else if(this.selectedSize){
+            else if(this.selectedSize && this.size_is_selected){
                 this.selectedVariation = this.product.variations.find( p => p.product_size_id == this.selectedSize.id)
                 return this.selectedVariation ? this.selectedVariation.quantity : 0;
             }
@@ -173,7 +173,7 @@ export default {
             if(!this.color_is_selected() || !this.size_is_selected()){
                 return
             }
-            else if (this.cantBuy){
+            else if (this.stock <1){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
@@ -278,7 +278,7 @@ export default {
             if(!this.color_is_selected() || !this.size_is_selected()){
                 return
             }
-            else if (this.cantBuy){
+            else if (this.stock <1){
                 this.$toast.error("Rupture de stock",{
                     icon: 'fas fa-exclamation-triangle'
                 });
